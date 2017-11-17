@@ -2,6 +2,7 @@ EOS = "."
 GO = "!"
 VOCAB = "abcdefghijklmnopqrstuvwxyz1234567890 .!,+=-*/()"
 VOCABSIZE = #VOCAB
+print("vocab size is: ", VOCABSIZE)
 
 local vocab_table = {}
 for loop_char = 1,#VOCAB do
@@ -9,6 +10,11 @@ for loop_char = 1,#VOCAB do
     vocab_table[c] = loop_char
 end
 
+local reverse_vocab_table = {}
+for loop_char = 1,#VOCAB do
+    local c = VOCAB:sub(loop_char,loop_char)
+    table.insert(reverse_vocab_table, c)
+end
 
 function generateSamples(length, number)
     local samples = {}
@@ -40,8 +46,8 @@ function convertToInts(samples)
     return samples
 end
 
-local num_samples = 10
-samples, targets, decoder_in = generateSamples(7,num_samples)
+local num_samples = 5000
+samples, targets, decoder_in = generateSamples(3,num_samples)
 samples = convertToInts(samples)
 targets = convertToInts(targets)
 decoder_in = convertToInts(decoder_in)
@@ -52,10 +58,12 @@ train_data = {
     decoder_in = decoder_in,
     size = function() return num_samples end,
     number = num_samples,
-    target = targets
+    targets = targets,
+    reverse_vocab_table = reverse_vocab_table,
+    EOS = EOS
 }
 
 return {
     train_data = train_data,
-    VOCABSIZE = VOCABSIZE
+    VOCABSIZE = VOCABSIZE,
 }
