@@ -96,9 +96,7 @@ for i=1,opt.niter do
    local encOut = enc:forward(encInSeq)
    forwardConnect(enc, dec)
    local decOut = dec:forward(decInSeq)
-   print(decOut)
-   print (decOutSeq)
-   os.exit()
+
    local err = criterion:forward(decOut, decOutSeq)
 
    print(string.format("Iteration %d ; NLL err = %f ", i, err))
