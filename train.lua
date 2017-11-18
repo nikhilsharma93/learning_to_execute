@@ -73,10 +73,11 @@ local function removeZeros(inp)
 end
 
 local function writeOutput(enc_inp, tar, dec_out, t)
+    local enc_inp = enc_inp:clone():permute(2,1)
     local dec_out = dec_out:clone():permute(2,1,3)
     local tar = tar:clone():permute(2,1)
     local out_str = "BATCH "..tostring(t).."\n"
-    local filename = 'results/output_text1.txt'
+    local filename = 'results/output_text2.txt'
     --print (opt.batchSize)
     for loop_samples = 1,opt.batchSize do
         --print (tar[loop_samples])
@@ -101,10 +102,10 @@ local function writeOutput(enc_inp, tar, dec_out, t)
         for i = 1,out:size(1) do
             local val
             local ind
-            --val, ind = torch.max(out[i],1)
-            val,ind=torch.sort(out[i])
+            val, ind = torch.max(out[i],1)
+            --val,ind=torch.sort(out[i])
             --ind = torch.multinomial(out[i]:exp(),1)
-            local c = dict[ind[2]]
+            local c = dict[ind[1]]
             if c == train_data.EOS then
                 out_str = out_str..c
                 break
@@ -174,6 +175,8 @@ local function train(trainSet)
 
         -- create mini batch
         enc_inp, dec_inp, tar, current_enc_seq_len, current_dec_seq_len = loadBatch(t, t+opt.batchSize-1, shuffle, opt.batchSize)
+        enc_inp = enc_inp:t()
+        dec_inp = dec_inp:t()
 
 
         encoder:zeroGradParameters()
@@ -183,9 +186,16 @@ local function train(trainSet)
 	    decoder:forget()
 
             -- evaluate function for complete mini batch
+            --print ('encin: '); print (enc_inp:size())
             local enc_out = encoder:forward(enc_inp)
+            --print ('encou: '); print(enc_out:size())
             forwardConnect(encoder, decoder, current_enc_seq_len)
+            --print ('decin: '); print (dec_inp:size())
             local dec_out = decoder:forward(dec_inp)
+            --print ('decou: '); print(dec_out:size())
+            --print ('tar: '); print(tar:size())
+
+            --[[
             dec_out_temp = torch.Tensor(current_enc_seq_len, opt.batchSize, 47)
 
             for il = 1,current_enc_seq_len do
@@ -197,21 +207,18 @@ local function train(trainSet)
             --print (dec_out_temp:size())
 
             local E = loss:forward(dec_out_temp, tar)
+            ]]
+            local E = loss:forward(dec_out, tar)
             nll = nll + E
-            print ('\nnll: ', E, torch.max(dec_out_temp), torch.min(dec_out_temp))
+            print ('\nnll: ', E, torch.max(dec_out), torch.min(dec_out))
 
             if true then
-                writeOutput(enc_inp, tar, dec_out_temp, t)
+                writeOutput(enc_inp, tar, dec_out, t)
             end
 
             -- Backward pass
             -- estimate df/dW
-            local dE_dy_temp = loss:backward(dec_out_temp, tar)
-            local dE_dy = {}
-            for il = 1,current_enc_seq_len do
-                table.insert(dE_dy, dE_dy_temp[il])
-            end
-            --print (dE_dy)
+            local dE_dy = loss:backward(dec_out, tar)
             decoder:backward(dec_inp, dE_dy)
             backwardConnect(encoder, decoder, current_dec_seq_len)
             local zero_tensor = torch.Tensor(enc_out):zero()
