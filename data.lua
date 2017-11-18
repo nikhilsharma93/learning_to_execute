@@ -1,6 +1,6 @@
 EOS = "."
 GO = "!"
-VOCAB = "abcdefghijklmnopqrstuvwxyz1234567890 .!,+=-*/()"
+VOCAB = "abcdefghijklmnopqrstuvwxyz .!,+=-*/()1234567890"
 VOCABSIZE = #VOCAB
 print("vocab size is: ", VOCABSIZE)
 
@@ -21,8 +21,8 @@ function generateSamples(length, number)
     local targets = {}
     local decoder_in = {}
     for loop_samples = 1,number do
-        local num1 = torch.random(10^(length-1), 10^length-1)
-        local num2 = torch.random(10^(length-1), 10^length-1)
+        local num1 = torch.random(10^(length-1), 10^length/2-1)
+        local num2 = torch.random(10^(length-1), 10^length/2-1)
         local target = num1+num2
         local input_string = "print ("..tostring(num1).."+"..tostring(num2)..")"
         local target_string = tostring(target)..EOS

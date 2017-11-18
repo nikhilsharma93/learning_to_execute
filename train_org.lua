@@ -20,13 +20,16 @@ local backwardConnect = t.backwardConnect
 
 
 -- Log results to files
-local trainLogger = optim.Logger(paths.concat(opt.save, 'trainV2.log'))
+local trainLogger = optim.Logger(paths.concat(opt.save, 'trainV1.log'))
 
 
 ----------------------------------------------------------------------
 print(sys.COLORS.red ..  '==> flattening model parameters')
 
-
+local w, dE_dw = nn.Container()
+    :add(encoder)
+    :add(decoder)
+    :getParameters()
 
 ----------------------------------------------------------------------
 print(sys.COLORS.red ..  '==> configuring optimizer')
@@ -76,7 +79,7 @@ local function writeOutput(enc_inp, tar, dec_out, t)
     local dec_out = dec_out:clone():permute(2,1,3)
     local tar = tar:clone():permute(2,1)
     local out_str = "BATCH "..tostring(t).."\n"
-    local filename = 'results/output_text1.txt'
+    local filename = 'results/output_text.txt'
     --print (opt.batchSize)
     for loop_samples = 1,opt.batchSize do
         --print (tar[loop_samples])
@@ -101,10 +104,9 @@ local function writeOutput(enc_inp, tar, dec_out, t)
         for i = 1,out:size(1) do
             local val
             local ind
-            --val, ind = torch.max(out[i],1)
-            val,ind=torch.sort(out[i])
+            val, ind = torch.max(out[i],1)
             --ind = torch.multinomial(out[i]:exp(),1)
-            local c = dict[ind[2]]
+            local c = dict[ind[1]]
             if c == train_data.EOS then
                 out_str = out_str..c
                 break
@@ -176,11 +178,16 @@ local function train(trainSet)
         enc_inp, dec_inp, tar, current_enc_seq_len, current_dec_seq_len = loadBatch(t, t+opt.batchSize-1, shuffle, opt.batchSize)
 
 
-        encoder:zeroGradParameters()
-        decoder:zeroGradParameters()
+        -- create closure to evaluate f(X) and df/dX
+        local eval_E = function(x)
 
-        encoder:forget()
-	    decoder:forget()
+            if x ~= w then
+                print ('CHECK....')
+                w:copy(x)
+            end
+
+            --reset gradients
+            dE_dw:zero()
 
             -- evaluate function for complete mini batch
             local enc_out = encoder:forward(enc_inp)
@@ -220,8 +227,11 @@ local function train(trainSet)
             encoder:gradParamClip(2)
             decoder:gradParamClip(2)
 
-               decoder:updateParameters(optimState['learningRate'])
-               encoder:updateParameters(optimState['learningRate'])
+            return E, dE_dw
+        end
+
+        -- optimize on current mini-batch
+        optim.adam(eval_E, w, optimState)
     end
 
     -- time taken
