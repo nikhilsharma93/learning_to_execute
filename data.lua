@@ -1,3 +1,5 @@
+
+
 EOS = "."
 GO = "!"
 VOCAB = "abcdefghijklmnopqrstuvwxyz .!,+=-*/()1234567890"
