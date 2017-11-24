@@ -20,11 +20,16 @@ local backwardConnect = t.backwardConnect
 
 
 -- Log results to files
-local trainLogger = optim.Logger(paths.concat(opt.save, 'trainV2.log'))
+local trainLogger = optim.Logger(paths.concat(opt.save, 'trainV1.log'))
 
 
 ----------------------------------------------------------------------
 print(sys.COLORS.red ..  '==> flattening model parameters')
+
+local w, dE_dw = nn.Container()
+    :add(encoder)
+    :add(decoder)
+    :getParameters()
 
 
 
@@ -42,18 +47,24 @@ local optimState = {
 ----------------------------------------------------------------------
 print(sys.COLORS.red ..  '==> defining training procedure')
 
-local function loadBatch(start_idx, stop_idx, shuffle, batch_size)
+local function loadBatch(start_idx, stop_idx, shuffle, batch_size, reverse_inp, duplicate_inp)
+    local reverse_inp = reverse_inp or false
+    local duplicate_inp = duplicate_inp or false
     local idx = 1
-    local enc_seq_len = 20
-    local dec_seq_len = 20
+    local enc_seq_len = 25
+    local dec_seq_len = 25
     local enc_inp = torch.zeros(batch_size, enc_seq_len)
     local dec_inp = torch.zeros(batch_size, dec_seq_len)
     local tar = torch.zeros(batch_size, dec_seq_len)
 
     for i = start_idx, stop_idx do
-        local sample = train_data.encoder_in[shuffle[i]]
+        local sample = train_data.encoder_in[shuffle[i]]:clone()
         local len = sample:size(1)
-        enc_inp[{idx,{enc_seq_len-len+1,enc_seq_len}}] = sample:clone()
+        --print ('\nbef: '); print(sample)
+        if reverse_inp then sample = sample:index(1 ,torch.linspace(len,1,len):long()) end
+        --print ('af: '); print(sample)
+        enc_inp[{idx,{enc_seq_len-len+1,enc_seq_len}}] = sample
+        if duplicate_inp then enc_inp[{idx,{enc_seq_len-len+1-len,enc_seq_len-len}}] = sample end
 
         local sample = train_data.decoder_in[shuffle[i]]
         local len = sample:size(1)
@@ -77,7 +88,7 @@ local function writeOutput(enc_inp, tar, dec_out, t)
     local dec_out = dec_out:clone():permute(2,1,3)
     local tar = tar:clone():permute(2,1)
     local out_str = "BATCH "..tostring(t).."\n"
-    local filename = 'results/output_text2.txt'
+    local filename = paths.concat(opt.save, 'output_text1.txt')
     --print (opt.batchSize)
     for loop_samples = 1,opt.batchSize do
         --print (tar[loop_samples])
@@ -112,6 +123,34 @@ local function writeOutput(enc_inp, tar, dec_out, t)
             end
             out_str = out_str..c
         end
+        out_str = out_str.."         "
+
+        for i = 1,out:size(1) do
+            local val
+            local ind
+            val,ind=torch.sort(out[i])
+            --ind = torch.multinomial(out[i]:exp(),1)
+            local c = dict[ind[2]]
+            if c == train_data.EOS then
+                out_str = out_str..c
+                break
+            end
+            out_str = out_str..c
+        end
+        out_str = out_str.."         "
+
+        for i = 1,out:size(1) do
+            local val
+            local ind
+            ind = torch.multinomial(out[i]:exp(),1)
+            local c = dict[ind[1]]
+            if c == train_data.EOS then
+                out_str = out_str..c
+                break
+            end
+            out_str = out_str..c
+        end
+
         out_str = out_str.."\n"
     end
     out_str = out_str.."\n\n"
@@ -179,11 +218,19 @@ local function train(trainSet)
         dec_inp = dec_inp:t()
 
 
-        encoder:zeroGradParameters()
-        decoder:zeroGradParameters()
+        -- create closure to evaluate f(X) and df/dX
+        local eval_E = function(x)
 
-        encoder:forget()
-	    decoder:forget()
+            if x ~= w then
+                print ('CHECK....')
+                w:copy(x)
+            end
+
+            --reset gradients
+            dE_dw:zero()
+
+            encoder:forget()
+            decoder:forget()
 
             -- evaluate function for complete mini batch
             --print ('encin: '); print (enc_inp:size())
@@ -192,22 +239,8 @@ local function train(trainSet)
             forwardConnect(encoder, decoder, current_enc_seq_len)
             --print ('decin: '); print (dec_inp:size())
             local dec_out = decoder:forward(dec_inp)
-            --print ('decou: '); print(dec_out:size())
-            --print ('tar: '); print(tar:size())
 
-            --[[
-            dec_out_temp = torch.Tensor(current_enc_seq_len, opt.batchSize, 47)
 
-            for il = 1,current_enc_seq_len do
-                dec_out_temp[il] = dec_out[il]
-            end
-            --print (dec_out)
-            --print (tar:size())
-            --os.exit()
-            --print (dec_out_temp:size())
-
-            local E = loss:forward(dec_out_temp, tar)
-            ]]
             local E = loss:forward(dec_out, tar)
             nll = nll + E
             print ('\nnll: ', E, torch.max(dec_out), torch.min(dec_out))
@@ -224,11 +257,14 @@ local function train(trainSet)
             local zero_tensor = torch.Tensor(enc_out):zero()
             encoder:backward(enc_inp, zero_tensor)
 
-            encoder:gradParamClip(2)
-            decoder:gradParamClip(2)
+            --encoder:gradParamClip(2)
+            --decoder:gradParamClip(2)
+            dE_dw:clamp(-5.0,5.0)
 
-               decoder:updateParameters(optimState['learningRate'])
-               encoder:updateParameters(optimState['learningRate'])
+            return E, dE_dw
+        end
+        -- optimize on current mini-batch
+        optim.adam(eval_E, w, optimState)
     end
 
     -- time taken
@@ -249,7 +285,7 @@ local function train(trainSet)
       handle:close()
       if string.sub(content,1,3) == "yes" then
         print (sys.COLORS.blue .. 'Saving Model')
-        local filename = 'results/modelV1.t7'
+        local filename = paths.concat(opt.save, 'modelV1.t7')
         --os.execute('mkdir -p ' .. sys.dirname(filename))
         print('==> saving model to '..filename)
         model1 = model:clone()

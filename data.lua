@@ -16,13 +16,14 @@ for loop_char = 1,#VOCAB do
     table.insert(reverse_vocab_table, c)
 end
 
-function generateSamples(length, number)
+function generateSamples(length_max, number)
     local samples = {}
     local targets = {}
     local decoder_in = {}
     for loop_samples = 1,number do
-        local num1 = torch.random(10^(length-1), 10^length/2-1)
-        local num2 = torch.random(10^(length-1), 10^length/2-1)
+        local length = torch.round(torch.uniform(1,length_max))
+        local num1 = torch.round(torch.uniform(10^(length-1), 10^length/2-1))
+        local num2 = torch.round(torch.uniform(10^(length-1), 10^length/2-1))
         local target = num1+num2
         local input_string = "print ("..tostring(num1).."+"..tostring(num2)..")"
         local target_string = tostring(target)..EOS
@@ -46,8 +47,8 @@ function convertToInts(samples)
     return samples
 end
 
-local num_samples = 5000
-samples, targets, decoder_in = generateSamples(3,num_samples)
+local num_samples = 40000
+samples, targets, decoder_in = generateSamples(8,num_samples)
 samples = convertToInts(samples)
 targets = convertToInts(targets)
 decoder_in = convertToInts(decoder_in)
