@@ -91,6 +91,12 @@ decoder:add(nn.Sequencer(nn.MaskZero(nn.LogSoftMax(), 1)))
 -----------------------------------------------------------
 local criterion = nn.SequencerCriterion(nn.MaskZeroCriterion(nn.ClassNLLCriterion(),1))
 
+if opt.type == 'cuda' then
+    print(sys.COLORS.red ..  '==> switching models to CUDA')
+    encoder:cuda()
+    decoder:cuda()
+    criterion:cuda()
+end
 
 -- return package:
 return {

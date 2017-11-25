@@ -43,6 +43,16 @@ local optimState = {
    learningRateDecay = opt.learningRateDecay
 }
 
+zero_tensor = torch.Tensor()
+
+if opt.type == 'cuda' then
+    print(sys.COLORS.red ..  '==> allocating CUDA memory')
+    enc_inp = torch.CudaTensor()
+    dec_inp = torch.CudaTensor()
+    tar = torch.CudaTensor()
+    zero_tensor = torch.CudaTensor()
+end
+
 
 ----------------------------------------------------------------------
 print(sys.COLORS.red ..  '==> defining training procedure')
@@ -218,6 +228,7 @@ local function train(trainSet)
         dec_inp = dec_inp:t()
 
 
+
         -- create closure to evaluate f(X) and df/dX
         local eval_E = function(x)
 
@@ -254,7 +265,7 @@ local function train(trainSet)
             local dE_dy = loss:backward(dec_out, tar)
             decoder:backward(dec_inp, dE_dy)
             backwardConnect(encoder, decoder, current_dec_seq_len)
-            local zero_tensor = torch.Tensor(enc_out):zero()
+            zero_tensor:resizeAs(enc_out):zero()
             encoder:backward(enc_inp, zero_tensor)
 
             --encoder:gradParamClip(2)

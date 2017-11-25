@@ -23,7 +23,7 @@ opt = lapp[[
 ]]
 
 --torch.setnumthreads(224)
-torch.setdefaulttensortype('torch.DoubleTensor')
+torch.setdefaulttensortype('torch.FloatTensor')
 
 -- type:
 if opt.type == 'cuda' then
