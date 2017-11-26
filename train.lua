@@ -61,8 +61,8 @@ local function loadBatch(start_idx, stop_idx, shuffle, batch_size, reverse_inp, 
     local reverse_inp = reverse_inp or false
     local duplicate_inp = duplicate_inp or false
     local idx = 1
-    local enc_seq_len = 80
-    local dec_seq_len = 12
+    local enc_seq_len = 100
+    local dec_seq_len = 100
     local enc_inp = torch.zeros(batch_size, enc_seq_len)
     local dec_inp = torch.zeros(batch_size, dec_seq_len)
     local tar = torch.zeros(batch_size, dec_seq_len)
@@ -170,7 +170,7 @@ local function train(trainSet)
         handle:close()
         if string.sub(content,1,3) == "yes" then
             print (sys.COLORS.blue .. 'Chaning Learning Rate')
-            optimState['learningRate'] = optimState['learningRate']/10.0
+            optimState['learningRate'] = optimState['learningRate']/2.0
         else
             print (sys.COLORS.blue .. 'Learning Rate Unchanged')
         end
