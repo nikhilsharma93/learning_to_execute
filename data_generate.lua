@@ -187,31 +187,31 @@ if script_path() == "data_generate.lua" then
   print("Data verification")
   training_val = {}
   target_val = {}
-  for k = 1, 50000 do
+  for k = 1, 500000 do
     code, code1, var, output, var1, output1 = compose(hardness_fun)
     --print (code)
     --print (code1)
     output = string.format("%d", output)
-    print("\n\n\n__________________\n")
+    --print("\n\n\n__________________\n")
     local input = ""
     local input1 = ""
     for i = 1, #code do
       input = string.format("%s%s\n", input, code[i])
     end
     input = string.format("%sprint(%s)", input, var)
-    print(string.format("Input: \n%s\n", input))
-    print("\n__________________\n")
+    --print(string.format("Input: \n%s\n", input))
+    --print("\n__________________\n")
     for i = 1, #code1 do
       input1 = string.format("%s%s\n", input1, code1[i])
     end
     input1 = string.format("%sprint(%s)", input1, var1)
-    print(string.format("Input1: \n%s\n", input1))
+    --print(string.format("Input1: \n%s\n", input1))
     table.insert(training_val, input)
     table.insert(target_val, input1)
     --print ('op is........', output)
-    print(string.format("Target: %s", output))
+    --print(string.format("Target: %s", output))
     lines = os.capture(string.format("python2.7 -c '%s'", input))
-    print(lines)
+    --print(lines)
     lines = string.sub(lines, 1, string.len(lines) - 1)
     if lines ~= output then
       print(string.format("\nERROR!\noutput from python: '%s', " ..
@@ -222,6 +222,6 @@ if script_path() == "data_generate.lua" then
   print("\n__________________\n")
   print("Successfully verified coherence of generated a " ..
         "targets with python interpreter.")
-  torch.save(lfs.currentdir()..'/data_pyToLua/hard_5_2_50k/training_val.dat', training_val)
-  torch.save(lfs.currentdir()..'/data_pyToLua/hard_5_2_50k/target_val.dat', target_val)
+  torch.save(lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/training_val.dat', training_val)
+  torch.save(lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/target_val.dat', target_val)
 end

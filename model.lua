@@ -10,7 +10,7 @@ local d = require 'data'
 local VOCABSIZE = d.VOCABSIZE
 local input_dim = VOCABSIZE -- embeddingSize
 local hidden_dim = 400  -- number of hidden cells per layer
-local num_layers = 2 -- number of hidden layers
+local num_layers = 4 -- number of hidden layers
 
 
 --Helper functions

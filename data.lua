@@ -1,4 +1,4 @@
-
+require 'lfs'
 
 EOS = "."
 GO = "!"
@@ -40,8 +40,8 @@ function convertToInts(samples)
     return samples
 end
 
-training_val_path = '/home/nikhil/myCode/git/learning_to_execute/data/hard_5_2_50k/training_val.dat'
-target_val_path = '/home/nikhil/myCode/git/learning_to_execute/data/hard_5_2_50k/target_val.dat'
+training_val_path = lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/training_val.dat'
+target_val_path = lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/target_val.dat'
 
 training_val = torch.load(training_val_path)
 target_val = torch.load(target_val_path)
