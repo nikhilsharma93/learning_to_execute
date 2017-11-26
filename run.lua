@@ -23,7 +23,7 @@ opt = lapp[[
 ]]
 
 --torch.setnumthreads(224)
-torch.setdefaulttensortype('torch.DoubleTensor')
+torch.setdefaulttensortype('torch.FloatTensor')
 
 -- type:
 if opt.type == 'cuda' then
@@ -38,11 +38,11 @@ print(sys.COLORS.red ..  '==> load modules')
 
 local data  = require 'data'
 local train = require 'train'
---local test  = require 'test'
+local test  = require 'test'
 
 ----------------------------------------------------------------------
 print(sys.COLORS.red .. '==> training!')
 while true do
    train(data.trainData)
-   --test(data.testData)
+   test(data.testData)
 end

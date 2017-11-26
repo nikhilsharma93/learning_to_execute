@@ -1,6 +1,8 @@
+
+
 EOS = "."
 GO = "!"
-VOCAB = "abcdefghijklmnopqrstuvwxyz .!,+=-*/()1234567890"
+VOCAB = "abcdefghijklmnopqrstuvwxyz <>:.!,;+=-\n*/()1234567890"
 VOCABSIZE = #VOCAB
 print("vocab size is: ", VOCABSIZE)
 
@@ -16,22 +18,14 @@ for loop_char = 1,#VOCAB do
     table.insert(reverse_vocab_table, c)
 end
 
-function generateSamples(length, number)
-    local samples = {}
-    local targets = {}
-    local decoder_in = {}
+function load_data(target_val)
+    local number = #target_val
+    local decoder_in = {table.unpack(target_val)}
     for loop_samples = 1,number do
-        local num1 = torch.random(10^(length-1), 10^length/2-1)
-        local num2 = torch.random(10^(length-1), 10^length/2-1)
-        local target = num1+num2
-        local input_string = "print ("..tostring(num1).."+"..tostring(num2)..")"
-        local target_string = tostring(target)..EOS
-        local decoder_string = GO..tostring(target)
-        table.insert(samples, input_string)
-        table.insert(targets, target_string)
-        table.insert(decoder_in, decoder_string)
+        target_val[loop_samples] = target_val[loop_samples]..EOS
+        decoder_in[loop_samples] = GO..decoder_in[loop_samples]
     end
-    return samples, targets, decoder_in
+    return target_val, decoder_in
 end
 
 function convertToInts(samples)
@@ -46,24 +40,47 @@ function convertToInts(samples)
     return samples
 end
 
-local num_samples = 5000
-samples, targets, decoder_in = generateSamples(3,num_samples)
+training_val_path = '/home/nikhil/myCode/git/learning_to_execute/data/hard_5_2_50k/training_val.dat'
+target_val_path = '/home/nikhil/myCode/git/learning_to_execute/data/hard_5_2_50k/target_val.dat'
+
+training_val = torch.load(training_val_path)
+target_val = torch.load(target_val_path)
+
+samples = training_val
+local num_samples = #samples
+targets, decoder_in = load_data(target_val)
+--samples, targets, decoder_in = generateSamples(8,num_samples)
 samples = convertToInts(samples)
 targets = convertToInts(targets)
 decoder_in = convertToInts(decoder_in)
 
+num_train_samples = torch.round(0.8*num_samples)
+num_test_samples = num_samples - num_train_samples
 
 train_data = {
-    encoder_in = samples,
-    decoder_in = decoder_in,
-    size = function() return num_samples end,
-    number = num_samples,
-    targets = targets,
+    encoder_in = {table.unpack(samples, 1, num_train_samples)},
+    decoder_in = {table.unpack(decoder_in, 1, num_train_samples)},
+    size = function() return num_train_samples end,
+    number = num_train_samples,
+    targets = {table.unpack(targets, 1, num_train_samples)},
     reverse_vocab_table = reverse_vocab_table,
     EOS = EOS
 }
 
+test_data = {
+    encoder_in = {table.unpack(samples, num_train_samples+1,num_samples)},
+    decoder_in = {table.unpack(decoder_in, num_train_samples+1,num_samples)},
+    size = function() return num_test_samples end,
+    number = num_test_samples,
+    targets = {table.unpack(targets, num_train_samples+1,num_samples)},
+    reverse_vocab_table = reverse_vocab_table,
+    EOS = EOS
+}
+
+
+
 return {
     train_data = train_data,
+    test_data = test_data,
     VOCABSIZE = VOCABSIZE,
 }
