@@ -248,7 +248,7 @@ local function train(trainSet)
             return E, dE_dw
         end
         -- optimize on current mini-batch
-        optim.adam(eval_E, w, optimState)
+        optim.sgd(eval_E, w, optimState)
     end
 
     -- time taken
