@@ -112,12 +112,12 @@ local function getOutput(enc_inp, dec_inp)
 end
 
 enc_inp = {}
-enc_inp[1] = "print((6365 if 62722<17224 else 43665))"
+enc_inp[1] = "print(911810)"
 dec_inp = {}
 dec_inp[1] = GO
-target = "43665"
-decoder = torch.load('/home/nikhil/myCode/git/learning_to_execute/results_progeval_5_2_10k/modelV1_decoder.t7'):type('torch.DoubleTensor')
-encoder = torch.load('/home/nikhil/myCode/git/learning_to_execute/results_progeval_5_2_10k/modelV1_encoder.t7'):type('torch.DoubleTensor')
+target = "print(915810)."
+decoder = torch.load('/home/nikhil/myCode/learning/Torch/learning_to_exc/git/learning_to_execute/results_5_2_500k_b128_r007/modelV1_decoder_epoch3.t7'):type('torch.DoubleTensor')
+encoder = torch.load('/home/nikhil/myCode/learning/Torch/learning_to_exc/git/learning_to_execute/results_5_2_500k_b128_r007/modelV1_encoder_epoch3.t7'):type('torch.DoubleTensor')
 encoder:evaluate()
 decoder:evaluate()
 --encoder:remember('both')
