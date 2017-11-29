@@ -187,7 +187,7 @@ if script_path() == "data_generate.lua" then
   print("Data verification")
   training_val = {}
   target_val = {}
-  for k = 1, 500000 do
+  for k = 1, 100 do
     code, code1, var, output, var1, output1 = compose(hardness_fun)
     --print (code)
     --print (code1)
@@ -220,8 +220,6 @@ if script_path() == "data_generate.lua" then
     end
   end
   print("\n__________________\n")
-  print("Successfully verified coherence of generated a " ..
-        "targets with python interpreter.")
-  torch.save(lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/training_val.dat', training_val)
-  torch.save(lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/target_val.dat', target_val)
+  torch.save(lfs.currentdir()..'/sample_test_data/input.dat', training_val)
+  torch.save(lfs.currentdir()..'/sample_test_data/target.dat', target_val)
 end

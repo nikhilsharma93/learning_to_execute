@@ -70,9 +70,7 @@ local function loadBatch(start_idx, stop_idx, shuffle, batch_size, reverse_inp, 
     for i = start_idx, stop_idx do
         local sample = train_data.encoder_in[shuffle[i]]:clone()
         local len = sample:size(1)
-        --print ('\nbef: '); print(sample)
         if reverse_inp then sample = sample:index(1 ,torch.linspace(len,1,len):long()) end
-        --print ('af: '); print(sample)
         enc_inp[{idx,{enc_seq_len-len+1,enc_seq_len}}] = sample
         if duplicate_inp then enc_inp[{idx,{enc_seq_len-len+1-len,enc_seq_len-len}}] = sample end
 
@@ -99,9 +97,8 @@ local function writeOutput(enc_inp, tar, dec_out, t)
     local tar = tar:clone():permute(2,1)
     local out_str = "BATCH "..tostring(t).."\n"
     local filename = paths.concat(opt.save, 'train_output_text1.txt')
-    --print (opt.batchSize)
+
     for loop_samples = 1,opt.batchSize do
-        --print (tar[loop_samples])
         local inp = removeZeros(enc_inp[loop_samples])
         local out = dec_out[loop_samples]
         local target = removeZeros(tar[loop_samples])
@@ -117,15 +114,10 @@ local function writeOutput(enc_inp, tar, dec_out, t)
         end
         out_str = out_str.."         "
 
-        --print (out[1])
-        --print (out[2])
-        --print ('\n')
         for i = 1,out:size(1) do
             local val
             local ind
             val, ind = torch.max(out[i],1)
-            --val,ind=torch.sort(out[i])
-            --ind = torch.multinomial(out[i]:exp(),1)
             local c = dict[ind[1]]
             if c == train_data.EOS then
                 out_str = out_str..c
@@ -140,9 +132,7 @@ local function writeOutput(enc_inp, tar, dec_out, t)
     local file = assert(io.open(filename,"a"))
     file:write(out_str)
     file:close()
-    --io.close()
 end
-
 
 
 local epoch
@@ -217,11 +207,8 @@ local function train(trainSet)
             decoder:forget()
 
             -- evaluate function for complete mini batch
-            --print ('encin: '); print (enc_inp:size())
             local enc_out = encoder:forward(enc_inp)
-            --print ('encou: '); print(enc_out:size())
             forwardConnect(encoder, decoder, current_enc_seq_len)
-            --print ('decin: '); print (dec_inp:size())
             local dec_out = decoder:forward(dec_inp)
 
 
@@ -241,8 +228,6 @@ local function train(trainSet)
             zero_tensor:resizeAs(enc_out):zero()
             encoder:backward(enc_inp, zero_tensor)
 
-            --encoder:gradParamClip(2)
-            --decoder:gradParamClip(2)
             dE_dw:clamp(-5.0,5.0)
 
             return E, dE_dw
@@ -257,7 +242,7 @@ local function train(trainSet)
     print("\n==> time to learn 1 sample = " .. (time*1000) .. 'ms')
     print ("Average NLL: "..nll/batchEpochCount)
 
-    -- update logger/plot
+    -- update logger
     trainLogger:add{['Error On Epochs'] = nll/batchEpochCount}
 
 

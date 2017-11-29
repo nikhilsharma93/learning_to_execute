@@ -1,12 +1,22 @@
+------------------------------------------------------------------------------
+-- __Author__ = Nikhil Sharma
+
+--Script to run sample test cases with the trained model
+--For each input, the expected output and output from model are both shown
+--The sample data is generated from the data_generate.lua script
+------------------------------------------------------------------------------
+
 require 'rnn'
---require 'cunn'
+require 'cunn'
 require 'lfs'
 
+--Define some constants. These are in accordance with those defined in data.lua and model.lua
 EOS = "."
 GO = "!"
 VOCAB = "abcdefghijklmnopqrstuvwxyz <>:.!,;+=-\n*/()1234567890"
 VOCABSIZE = #VOCAB
 
+--Some helper functions
 local vocab_table = {}
 for loop_char = 1,#VOCAB do
     local c = VOCAB:sub(loop_char,loop_char)
@@ -34,101 +44,66 @@ local function forwardConnect(encoder, decoder, seq_len)
    end
 end
 
-local function maxProb(dec_out)
-    local dec_out = dec_out:clone():permute(2,1,3)
-    local out_str = "BATCH "..tostring(t).."\n"
-    for loop_samples = 1,1 do
-        local out = dec_out[loop_samples]
-        local dict = reverse_vocab_table
-
-        for i = 1,out:size(1) do
-            local val
-            local ind
-            val, ind = torch.max(out[i],1)
-            --val,ind=torch.sort(out[i])
-            --ind = torch.multinomial(out[i]:exp(),1)
-            local c = dict[ind[1]]
-            if c == EOS then
-                out_str = out_str..c
-                break
-            end
-            out_str = out_str..c
-        end
-
-        out_str = out_str.."\n\n"
-    end
-    out_str = out_str.."\n\n"
-    return out_str
-end
-
 
 local function getOutput(enc_inp)
     --enc_inp is a string
 
     local current_enc_seq_len = enc_inp:len()
     enc_inp = convertToInts(enc_inp)
-    --print ('size bef: '); print(enc_inp:size())
     enc_inp = enc_inp:view(current_enc_seq_len,1)
-    --print ('size bef: '); print(enc_inp:size())
 
+    --Set the GO indicator for the decoder
     dec_inp = convertToInts(GO)
     dec_inp = dec_inp:view(1,1)
 
     local enc_out = encoder:forward(enc_inp)
-    --print ('encou: '); print(enc_out:size())
+
+    --Connect the last hidden state of encoder to decoder
     forwardConnect(encoder, decoder, current_enc_seq_len)
-    --print ('decin: '); print (dec_inp:size())
-    --print (dec_inp)
-    local dec_out = decoder:forward(dec_inp)
-    --print ('dec out: '); print (dec_out)
-    local val, ind = torch.max(dec_out,3)
-    --print ("val ind: ", val, ind[{1,1,1}])
-    ind = ind[{1,1,1}]
-    local current_char = reverse_vocab_table[ind]
-    local out_str = current_char
-    --print ('out_str... ', out_str)
-    loc = 1
-    while (current_char ~= EOS) do
-        --print ('doing..')
-        --local temp_dec_in = target:sub(loc,loc)
-        --print (temp_dec_in)
-        --temp_dec_in = vocab_table[temp_dec_in]
-        --print (temp_dec_in)
-        --dec_inp:fill(temp_dec_in)
-        dec_inp:fill(ind)
-        dec_out = decoder:forward(dec_inp)
-        val, ind = torch.max(dec_out,3)
+
+    local out_str = ""
+
+    --Keep decoding until EOS character is outputted
+    while true do
+        local dec_out = decoder:forward(dec_inp)
+        local val, ind = torch.max(dec_out,3)
         ind = ind[{1,1,1}]
 
-        current_char = reverse_vocab_table[ind]
-
+        local current_char = reverse_vocab_table[ind]
+        if (current_char == EOS) then break end
         out_str = out_str..current_char
-        loc = loc+1
+        dec_inp:fill(ind)
     end
     return out_str
 end
 
+
 local current_dir = lfs.currentdir()
-decoder = torch.load(current_dir..'/results_5_2_500k_b128_r007/modelV1_decoder_cpu.t7'):type('torch.DoubleTensor')
-encoder = torch.load(current_dir..'/results_5_2_500k_b128_r007/modelV1_encoder_cpu.t7'):type('torch.DoubleTensor')
+
+--Load the models
+decoder = torch.load(current_dir..'/models/modelV1_decoder.t7'):type('torch.DoubleTensor')
+encoder = torch.load(current_dir..'/models/modelV1_encoder.t7'):type('torch.DoubleTensor')
 encoder:evaluate()
 decoder:evaluate()
 
-inputs = {}
-targets = {}
-table.insert(inputs, "for x in range(4):-=18652")
-table.insert(inputs, "print((111 if 45<23 else 129))")
---target = "print(10)."
+--Load sample test data
+sample_test_data_dir = current_dir..'/sample_test_data/'
+inputs = torch.load(sample_test_data_dir..'input.dat')
+targets = torch.load(sample_test_data_dir..'target.dat')
 
+--Loop over the samples and predict!
 for loop_inp = 1, #inputs do
     local enc_inp = inputs[loop_inp]
-    print ('\nINPUT:\n')
+    print ('\nINPUT:')
     print (enc_inp)
     encoder:remember('both')
     decoder:remember('both')
     local out_str = getOutput(enc_inp)
-    print ('OUTPUT:\n')
+    print ('\nOUTPUT:')
     print (out_str)
+    print ('\nEXPECTED OUTPUT:')
+    print (targets[loop_inp])
+    print ('\n')
     encoder:forget()
     decoder:forget()
 end
