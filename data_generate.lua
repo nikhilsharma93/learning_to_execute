@@ -14,6 +14,11 @@
   limitations under the License.
 ]]--
 
+
+--Script modified by Nikhil Sharma to include target generation for Lua
+
+
+
 require "env"
 include "utils/operations.lua"
 include "utils/stack.lua"
@@ -22,8 +27,10 @@ include "utils/variablesManager.lua"
 include "utils/utils.lua"
 require 'lfs'
 
+
+
 local stack = Stack()
-local stack1 = Stack()
+local stack_lua = Stack()
 variablesManager = VariablesManager()
 symbolsManager = SymbolsManager()
 
@@ -50,7 +57,7 @@ end
 
 function compose(hardness)
   stack:clean()
-  stack1:clean()
+  stack_lua:clean()
   variablesManager:clean()
   local funcs = {}
   local names = {}
@@ -75,10 +82,10 @@ function compose(hardness)
       code_copy[#code_copy + 1] = code_tmp1[i]
     end
     stack:push({var_tmp, output_tmp})
-    stack1:push({var_tmp1, output_tmp1})
+    stack_lua:push({var_tmp1, output_tmp1})
   end
   local var, output = table.unpack(stack:pop())
-  local var1, output1 = table.unpack(stack1:pop())
+  local var1, output1 = table.unpack(stack_lua:pop())
   return code, code_copy, var, output, var1, output1
 end
 
@@ -88,22 +95,22 @@ function get_operand(hardness)
     local expr = string.format("%d", eval)
     return {expr, eval}, {expr, eval}
   else
-    return stack:pop(), stack1:pop()
+    return stack:pop(), stack_lua:pop()
   end
 end
 
 function get_operands(hardness, nr)
   local ret = {}
-  local ret1 = {}
+  local ret_lua = {}
   local perm = torch.randperm(nr)
   for i = 1, nr do
     local out1, out2 = get_operand(hardness)
     local expr, eval = table.unpack(out1)
     local expr1, eval1 = table.unpack(out2)
     ret[perm[i]] = {expr=expr, eval=eval}
-    ret1[perm[i]] = {expr=expr1, eval=eval1}
+    ret_lua[perm[i]] = {expr=expr1, eval=eval1}
   end
-  return ret, ret1
+  return ret, ret_lua
 end
 
 function get_data(state)
@@ -189,29 +196,20 @@ if script_path() == "data_generate.lua" then
   target_val = {}
   for k = 1, 100 do
     code, code1, var, output, var1, output1 = compose(hardness_fun)
-    --print (code)
-    --print (code1)
     output = string.format("%d", output)
-    --print("\n\n\n__________________\n")
     local input = ""
     local input1 = ""
     for i = 1, #code do
       input = string.format("%s%s\n", input, code[i])
     end
     input = string.format("%sprint(%s)", input, var)
-    --print(string.format("Input: \n%s\n", input))
-    --print("\n__________________\n")
     for i = 1, #code1 do
       input1 = string.format("%s%s\n", input1, code1[i])
     end
     input1 = string.format("%sprint(%s)", input1, var1)
-    --print(string.format("Input1: \n%s\n", input1))
     table.insert(training_val, input)
     table.insert(target_val, input1)
-    --print ('op is........', output)
-    --print(string.format("Target: %s", output))
     lines = os.capture(string.format("python2.7 -c '%s'", input))
-    --print(lines)
     lines = string.sub(lines, 1, string.len(lines) - 1)
     if lines ~= output then
       print(string.format("\nERROR!\noutput from python: '%s', " ..

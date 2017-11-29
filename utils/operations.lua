@@ -14,6 +14,8 @@
   limitations under the License.
 ]]--
 
+--Script modified by Nikhil Sharma to include target generation for Lua
+
 function pair_opr(hardness)
   local out1, out2 = get_operands(hardness, 2)
   local a, b = table.unpack(out1)
@@ -100,8 +102,8 @@ function small_loop_opr(hardness)
   local code = {string.format("%s=%s", var, a.expr),
                 string.format("for x in range(%d):%s%s=%s", loop, var,
                                                             op, b.expr)}
-    local code1 = {string.format("%s=%s", var, c.expr),
-                  string.format("for x=1,%d do %s=%s%s%s; end", loop, var, var, op, d.expr)}
+  local code1 = {string.format("%s=%s", var, c.expr),
+                string.format("for x=1,%d do %s=%s%s%s; end", loop, var, var, op, d.expr)}
   local expr = var
   local expr1 = var
   return code, code1, expr, eval, expr1, eval1
@@ -129,7 +131,7 @@ function ifstat_opr(hardness)
   end
   local expr = string.format("(%s if %s%s%s else %s)",
                              c.expr, a.expr, name, b.expr, d.expr)
-    local expr1 = string.format("(if %s%s%s then %s else %s end)",
-                               a.expr, name, b.expr, c.expr, d.expr)
+  local expr1 = string.format("(if %s%s%s then %s else %s end)",
+                             a.expr, name, b.expr, c.expr, d.expr)
   return {}, {}, expr, output, expr1, output
 end
