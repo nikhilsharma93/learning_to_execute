@@ -6,10 +6,6 @@ The current version learned to convert small Python code snippets to their equiv
 
 Inspired from Learning to Execute (https://arxiv.org/abs/1410.4615), from which the Python data generation script was borrowed. It was modified to generate target as Lua snippets.
 
-<br/>
-Requirements: 
-`Torch`, `Lua`, `nn, nngraph modules for Torch`
-
 <br />
 To generate the data, execute
 
@@ -20,6 +16,10 @@ th data_generate.lua
 Note that the Lua syntax given as target is not entirely true. The current version has some workarounds for the syntax of "if-else" statements. For more information, compare the input and target values provided below.
 The network was trained with hardness parameters nesting = 2 and length = 5 (look under data_generate.lua and the paper itself for more details).
 
+
+<br/>
+Requirements: 
+`Torch`, `Lua`, `nn, nngraph modules for Torch`
 
 <br />
 To train, execute
