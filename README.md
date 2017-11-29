@@ -33,7 +33,7 @@ th run.lua -b <batch-size>  -r <initial learning rate>  -o <save directory path>
 To see some sample tests, execute
 
 ```
-th testRun.lua -p (if using CUDA)
+th testRun.lua
 ```
 
 <br /><br />
