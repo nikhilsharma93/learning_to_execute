@@ -61,8 +61,8 @@ local function loadBatch(start_idx, stop_idx, shuffle, batch_size, reverse_inp, 
     local reverse_inp = reverse_inp or false
     local duplicate_inp = duplicate_inp or false
     local idx = 1
-    local enc_seq_len = 100
-    local dec_seq_len = 100
+    local enc_seq_len = 150
+    local dec_seq_len = 165
     local enc_inp = torch.zeros(batch_size, enc_seq_len)
     local dec_inp = torch.zeros(batch_size, dec_seq_len)
     local tar = torch.zeros(batch_size, dec_seq_len)

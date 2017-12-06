@@ -27,7 +27,12 @@ include "utils/variablesManager.lua"
 include "utils/utils.lua"
 require 'lfs'
 
-
+local params = {...}
+nesting_val = params[1]
+length_val = params[2]
+max_val = params[3]
+max_val = torch.round(max_val*(length_val/(3+4+5+6)))
+print ('nval: ', nesting_val, length_val, max_val)
 
 local stack = Stack()
 local stack_lua = Stack()
@@ -186,7 +191,7 @@ function load_data(state)
 end
 
 function hardness_fun()
-  return 5, 2
+    return length_val, nesting_val
 end
 
 if script_path() == "data_generate.lua" then
@@ -194,7 +199,7 @@ if script_path() == "data_generate.lua" then
   print("Data verification")
   training_val = {}
   target_val = {}
-  for k = 1, 100 do
+  for k = 1, max_val do
     code, code1, var, output, var1, output1 = compose(hardness_fun)
     output = string.format("%d", output)
     local input = ""
@@ -218,6 +223,6 @@ if script_path() == "data_generate.lua" then
     end
   end
   print("\n__________________\n")
-  torch.save(lfs.currentdir()..'/sample_test_data/input.dat', training_val)
-  torch.save(lfs.currentdir()..'/sample_test_data/target.dat', target_val)
+  torch.save(lfs.currentdir()..'/data_pyToLua/mix_3to6l_1to4n/input_nesting_'..tostring(nesting_val)..'_length_'..tostring(length_val)..'.dat', training_val)
+  torch.save(lfs.currentdir()..'/data_pyToLua/mix_3to6l_1to4n/target_nesting_'..tostring(nesting_val)..'_length_'..tostring(length_val)..'.dat', target_val)
 end

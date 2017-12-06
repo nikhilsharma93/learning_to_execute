@@ -49,8 +49,8 @@ function convertToInts(samples)
     return samples
 end
 
-training_val_path = lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/training_val.dat'
-target_val_path = lfs.currentdir()..'/data_pyToLua/hard_5_2_500k/target_val.dat'
+training_val_path = lfs.currentdir()..'/data_pyToLua/mix_3to6l_1to4n/training_val.dat'
+target_val_path = lfs.currentdir()..'/data_pyToLua/mix_3to6l_1to4n/target_val.dat'
 
 training_val = torch.load(training_val_path)
 target_val = torch.load(target_val_path)
