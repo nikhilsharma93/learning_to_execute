@@ -1,0 +1,1327 @@
+INPUT
+print((517 if 944<250 else (2*(140*1))))
+OUTPUT
+print((if 944<250 then 517 else (2*142) end))
+EXPECTED
+print((if 944<250 then 517 else (2*(140*1)) end))
+INPUT
+c=830
+for x in range(3):c-=255
+i=538
+for x in range(10):i+=c
+b=i;
+print((722 if 250>999 else (b-726)))
+OUTPUT
+c=830
+for x=1,3 do c=c-255; end
+i=945
+for x=1,10 do i=i+c; end
+c=i;
+print((if 272>99 then 722 else (c-726) end))
+EXPECTED
+c=830
+for x=1,3 do c=c-255; end
+i=538
+for x=1,10 do i=i+c; end
+b=i;
+print((if 250>999 then 722 else (b-726) end))
+INPUT
+d=((866-22) if 1000>447 else 460)
+for x in range(6):d+=849
+print((d if 546>13 else 776))
+OUTPUT
+d=(if 100>109 then (566 if 444<444 else 678) else 382 end)
+for x=1,6 do d=d+63; end
+print((d-776))
+EXPECTED
+d=(if 1000>447 then (866-22) else 460 end)
+for x=1,6 do d=d+849; end
+print((if 546>13 then d else 776 end))
+INPUT
+i=74;
+c=176;
+print((6*(c-((i-(11*672))+17))))
+OUTPUT
+i=74;
+c=176;
+print((6*(c-(((i-115)-972)-17))))
+EXPECTED
+i=74;
+c=176;
+print((6*(c-((i-(11*672))+17))))
+INPUT
+a=(373*7);
+f=(a-502);
+j=(f+910);
+g=598
+for x in range(9):g+=(j-868)
+print(g)
+OUTPUT
+a=(373*7);
+f=(a-902);
+g=(f+204);
+g=598
+for x=1,9 do g=g+(g-868); end
+print(g)
+EXPECTED
+a=(373*7);
+f=(a-502);
+j=(f+910);
+g=598
+for x=1,9 do g=g+(j-868); end
+print(g)
+INPUT
+g=380;
+i=825
+for x in range(7):i-=(1*(g+614))
+print(i)
+OUTPUT
+g=380;
+i=825
+for x=1,7 do i=i-(1*(g+614)); end
+print(i)
+EXPECTED
+g=380;
+i=825
+for x=1,7 do i=i-(1*(g+614)); end
+print(i)
+INPUT
+h=(997+346);
+f=((h+899)*3);
+print((f-480))
+OUTPUT
+h=(997+346);
+f=((h+899)*3);
+print((f-480))
+EXPECTED
+h=(997+346);
+f=((h+899)*3);
+print((f-480))
+INPUT
+e=938;
+a=317
+for x in range(3):a-=(e+446)
+h=642
+for x in range(7):h+=(729 if 32<a else 582)
+print(h)
+OUTPUT
+e=938;
+a=317
+for x=1,3 do a=a-(e+344); end
+h=422
+for x=1,1 do h=h+(if 42<a then 723 else 582 end); end
+print(h)
+EXPECTED
+e=938;
+a=317
+for x=1,3 do a=a-(e+446); end
+h=642
+for x=1,7 do h=h+(if 32<a then 729 else 582 end); end
+print(h)
+INPUT
+h=720;
+d=(h-910)
+for x in range(1):d+=446
+print(((6*d)*2))
+OUTPUT
+h=720;
+d=(h-910)
+for x=1,1 do d=d+446; end
+print(((5*d)*2))
+EXPECTED
+h=720;
+d=(h-910)
+for x=1,1 do d=d+446; end
+print(((6*d)*2))
+INPUT
+j=447;
+d=629;
+c=541;
+print((c+(d-(789 if 732>(8*(j-689)) else 17))))
+OUTPUT
+j=447;
+d=629;
+f=944;
+print((f-(d+(if 783>(8*(j+8254)) then 789 else 17 end))))
+EXPECTED
+j=447;
+d=629;
+c=541;
+print((c+(d-(if 732>(8*(j-689)) then 789 else 17 end))))
+INPUT
+b=(193 if 244>((846+436)+654) else 306);
+print((b-944))
+OUTPUT
+b=(if 244>((863+347)+484) then 193 else 606 end);
+print((b-944))
+EXPECTED
+b=(if 244>((846+436)+654) then 193 else 306 end);
+print((b-944))
+INPUT
+j=260
+for x in range(6):j-=913
+c=(4*(328-j))
+for x in range(11):c-=195
+print(c)
+OUTPUT
+j=260
+for x=1,6 do j=j-913; end
+c=(16*(362-j))
+for x=1,11 do c=c-195; end
+print(c)
+EXPECTED
+j=260
+for x=1,6 do j=j-913; end
+c=(4*(328-j))
+for x=1,11 do c=c-195; end
+print(c)
+INPUT
+c=547;
+print((((367+(c-(994+581)))+935) if 809<724 else 360))
+OUTPUT
+c=547;
+print((if 809<903 then ((c+(374-(904+754)))+862) else 360 end))
+EXPECTED
+c=547;
+print((if 809<724 then ((367+(c-(994+581)))+935) else 360 end))
+INPUT
+g=35
+for x in range(7):g+=(((846 if (52+720)>551 else 424)*5)-767)
+print(g)
+OUTPUT
+g=35
+for x=1,7 do g=g+5051; end
+print(((if 883>92 then ((843-g)+62) else 767 end)*1))
+EXPECTED
+g=35
+for x=1,7 do g=g+(((if (52+720)>551 then 846 else 424 end)*5)-767); end
+print(g)
+INPUT
+b=896;
+h=757
+for x in range(3):h-=(b-624)
+f=581
+for x in range(10):f+=(28 if h>594 else 891)
+print(f)
+OUTPUT
+b=896;
+h=757
+for x=1,3 do h=h-(b-544); end
+f=28
+for x=1,10 do f=f+(if h>591 then 2681 else 891 end); end
+print(f)
+EXPECTED
+b=896;
+h=757
+for x=1,3 do h=h-(b-624); end
+f=581
+for x=1,10 do f=f+(if h>594 then 28 else 891 end); end
+print(f)
+INPUT
+d=((11*186)+867);
+print(((d-612) if 519>904 else 235))
+OUTPUT
+d=((11*186)+654);
+print((if 527>904 then (d-612) else 235 end))
+EXPECTED
+d=((11*186)+867);
+print((if 519>904 then (d-612) else 235 end))
+INPUT
+c=(293 if 815>(2*226) else 606);
+print((c-98))
+OUTPUT
+c=(if 815>(2*232) then 293 else 606 end);
+print((c-98))
+EXPECTED
+c=(if 815>(2*226) then 293 else 606 end);
+print((c-98))
+INPUT
+f=749
+for x in range(12):f+=251
+g=949
+for x in range(1):g-=f
+h=921
+for x in range(4):h+=((503-g)*3)
+print(h)
+OUTPUT
+f=749
+for x=1,12 do f=f+251; end
+g=847
+for x=1,10 do g=g-f; end
+h=821
+for x=1,4 do h=h+((503-g)*6); end
+print(h)
+EXPECTED
+f=749
+for x=1,12 do f=f+251; end
+g=949
+for x=1,1 do g=g-f; end
+h=921
+for x=1,4 do h=h+((503-g)*3); end
+print(h)
+INPUT
+i=984;
+g=174
+for x in range(5):g-=(i+793)
+print(((36 if 663>738 else (g if 591<917 else 864))-143))
+OUTPUT
+i=984;
+g=174
+for x=1,5 do g=g-(i+955); end
+print(((if 618>98 then 36 else (98 if 354<933 else g) end)-134))
+EXPECTED
+i=984;
+g=174
+for x=1,5 do g=g-(i+793); end
+print(((if 663>738 then 36 else (g if 591<917 else 864) end)-143))
+INPUT
+g=687;
+i=(g-467)
+for x in range(10):i+=904
+f=((i*12)+279);
+print((f-679))
+OUTPUT
+g=687;
+i=(g-467)
+for x=1,10 do i=i-904; end
+f=((i+124)-279);
+print((f-67))
+EXPECTED
+g=687;
+i=(g-467)
+for x=1,10 do i=i+904; end
+f=((i*12)+279);
+print((f-679))
+INPUT
+print(((837 if 423<((11*(873+872))-242) else 379)+520))
+OUTPUT
+print(((if 423<((11*(659+873))+629) then 837 else 612 end)+520))
+EXPECTED
+print(((if 423<((11*(873+872))-242) then 837 else 379 end)+520))
+INPUT
+e=(308 if 670<633 else 53)
+for x in range(5):e-=995
+c=88;
+b=(c+e);
+print((b+189))
+OUTPUT
+e=(if 670<688 then 351 else 535 end);
+c=828;
+b=(c-(e+88))
+for x=1,5 do b=b+18; end
+print(b)
+EXPECTED
+e=(if 670<633 then 308 else 53 end)
+for x=1,5 do e=e-995; end
+c=88;
+b=(c+e);
+print((b+189))
+INPUT
+c=478;
+print((((139 if 485>(c-(1*478)) else 668)+107)+953))
+OUTPUT
+c=478;
+print((((if 485>(c-(1*478)) then 139 else 388 end)+607)+953))
+EXPECTED
+c=478;
+print((((if 485>(c-(1*478)) then 139 else 668 end)+107)+953))
+INPUT
+j=(10*(678+(351*10)));
+print((j-146))
+OUTPUT
+j=(10*(678+(351*10)));
+print((j-146))
+EXPECTED
+j=(10*(678+(351*10)));
+print((j-146))
+INPUT
+b=891;
+c=(b+(398+(748 if 257<981 else 376)))
+for x in range(9):c-=336
+print((8*c))
+OUTPUT
+b=891;
+c=(b+(398+575))
+for x=1,3 do c=c-449; end
+print((if 822<906 then 848 else (8*c) end))
+EXPECTED
+b=891;
+c=(b+(398+(if 257<981 then 748 else 376 end)))
+for x=1,9 do c=c-336; end
+print((8*c))
+INPUT
+f=220;
+b=(f+321);
+print((b+724))
+OUTPUT
+f=220;
+b=(f+321);
+print((b+724))
+EXPECTED
+f=220;
+b=(f+321);
+print((b+724))
+INPUT
+h=574
+for x in range(7):h-=366
+g=(52 if (327 if 916<(58+h) else 468)<524 else 110)
+for x in range(11):g-=737
+print(g)
+OUTPUT
+h=574
+for x=1,7 do h=h-366; end
+i=(if (415 if 438>528 else h)<511 then 52 else 4 end)
+for x=1,11 do i=i+119; end
+print(((i*7)*1))
+EXPECTED
+h=574
+for x=1,7 do h=h-366; end
+g=(if (327 if 916<(58+h) else 468)<524 then 52 else 110 end)
+for x=1,11 do g=g-737; end
+print(g)
+INPUT
+e=((342 if 819>56 else (23 if 75<168 else 860))-466);
+print((e-665))
+OUTPUT
+e=((if 819>(388-185) then 342 else 784 end)-628);
+j=(e-246);
+print((j+665))
+EXPECTED
+e=((if 819>56 then 342 else (23 if 75<168 else 860) end)-466);
+print((e-665))
+INPUT
+f=781;
+a=257;
+print((448+(a-(f+(849*11)))))
+OUTPUT
+f=781;
+a=257;
+print((43+(a-((f+849)*11))))
+EXPECTED
+f=781;
+a=257;
+print((448+(a-(f+(849*11)))))
+INPUT
+g=850
+for x in range(4):g+=((550+(123*8))*3)
+b=213
+for x in range(7):b+=g
+print(b)
+OUTPUT
+g=850
+for x=1,4 do g=g+(550+(728*8)); end
+b=213
+for x=1,7 do b=b+(g*4); end
+print(b)
+EXPECTED
+g=850
+for x=1,4 do g=g+((550+(123*8))*3); end
+b=213
+for x=1,7 do b=b+g; end
+print(b)
+INPUT
+b=((11*(1*767))*6);
+print((b-26))
+OUTPUT
+b=((11*(1*767))*6);
+print((b-26))
+EXPECTED
+b=((11*(1*767))*6);
+print((b-26))
+INPUT
+j=98;
+f=879
+for x in range(4):f-=(j-545)
+c=241
+for x in range(7):c+=(f+326)
+d=50;
+print((d+c))
+OUTPUT
+j=98;
+f=879
+for x=1,4 do f=f-(j+545); end
+c=148
+for x=1,7 do c=c+f; end
+f=508;
+print((f-(90-c)))
+EXPECTED
+j=98;
+f=879
+for x=1,4 do f=f-(j-545); end
+c=241
+for x=1,7 do c=c+(f+326); end
+d=50;
+print((d+c))
+INPUT
+j=509;
+print((((j-20) if 708>419 else 201)-983))
+OUTPUT
+j=509;
+print(((if 708>417 then (j-20) else 201 end)-983))
+EXPECTED
+j=509;
+print(((if 708>419 then (j-20) else 201 end)-983))
+INPUT
+g=899
+for x in range(7):g-=241
+c=896;
+f=144
+for x in range(10):f+=(c+(798 if g<596 else 499))
+i=310
+for x in range(11):i+=f
+print(i)
+OUTPUT
+g=899
+for x=1,7 do g=g+241; end
+c=777;
+c=854
+for x=1,10 do c=c-(c+g); end
+i=851
+for x=1,10 do i=i+(if c>612 then 3121 else 319 end); end
+print(i)
+EXPECTED
+g=899
+for x=1,7 do g=g-241; end
+c=896;
+f=144
+for x=1,10 do f=f+(c+(if g<596 then 798 else 499 end)); end
+i=310
+for x=1,11 do i=i+f; end
+print(i)
+INPUT
+i=814;
+b=7;
+print((7*(b-(i-(696 if 489>341 else 243)))))
+OUTPUT
+i=814;
+b=7;
+print((b-(1*(if 883>347 then 696 else (d-243) end))))
+EXPECTED
+i=814;
+b=7;
+print((7*(b-(i-(if 489>341 then 696 else 243 end)))))
+INPUT
+print((381 if 469<43 else (487 if (100*9)>888 else 538)))
+OUTPUT
+print((if 469<34 then 381 else (15 if (843*9)>888 else 538) end))
+EXPECTED
+print((if 469<43 then 381 else (487 if (100*9)>888 else 538) end))
+INPUT
+b=749
+for x in range(9):b-=(5*(7*587))
+print(b)
+OUTPUT
+b=749
+for x=1,9 do b=b-(5*(7*587)); end
+print(b)
+EXPECTED
+b=749
+for x=1,9 do b=b-(5*(7*587)); end
+print(b)
+INPUT
+e=(427*9);
+f=202
+for x in range(10):f+=(e+560)
+print((982+(f+21)))
+OUTPUT
+e=(427*9);
+f=102
+for x=1,10 do f=f+(e+583); end
+print((9820+(f+21)))
+EXPECTED
+e=(427*9);
+f=202
+for x=1,10 do f=f+(e+560); end
+print((982+(f+21)))
+INPUT
+g=696;
+print((g+(8*(116+960))))
+OUTPUT
+g=696;
+print((g+(8*(116+960))))
+EXPECTED
+g=696;
+print((g+(8*(116+960))))
+INPUT
+h=(647 if 450<(284-450) else 411);
+print((8*(4*(h-286))))
+OUTPUT
+h=(if 450<(2*480) then 357 else 411 end);
+print((811-(4*(h+286))))
+EXPECTED
+h=(if 450<(284-450) then 647 else 411 end);
+print((8*(4*(h-286))))
+INPUT
+f=(594 if 922>837 else 719);
+print((864+(601 if (f-295)>2 else 696)))
+OUTPUT
+f=(if 922>57 then 561 else 717 end);
+print((837+(if (f-287)>6093 then 501 else 6 end)))
+EXPECTED
+f=(if 922>837 then 594 else 719 end);
+print((864+(if (f-295)>2 then 601 else 696 end)))
+INPUT
+b=(851-(2*620))
+for x in range(9):b+=874
+print((368+(b-911)))
+OUTPUT
+b=(851-(2*620))
+for x=1,9 do b=b+858; end
+print((368+(b-911)))
+EXPECTED
+b=(851-(2*620))
+for x=1,9 do b=b+874; end
+print((368+(b-911)))
+INPUT
+print((2*(774 if 500>867 else (574*11))))
+OUTPUT
+print((2*(if 500>867 then 774 else (574*11) end)))
+EXPECTED
+print((2*(if 500>867 then 774 else (574*11) end)))
+INPUT
+print(((150-(8*(7*(11*315))))+58))
+OUTPUT
+print(((150-(8*(11*(11*670))))+5))
+EXPECTED
+print(((150-(8*(7*(11*315))))+58))
+INPUT
+c=80;
+g=((c+772)+892);
+b=237
+for x in range(10):b-=((g-750)*3)
+print(b)
+OUTPUT
+c=80;
+g=((c+772)+852)
+for x=1,10 do g=g-803; end
+b=750;
+print(((b-750)))
+EXPECTED
+c=80;
+g=((c+772)+892);
+b=237
+for x=1,10 do b=b-((g-750)*3); end
+print(b)
+INPUT
+j=194
+for x in range(11):j-=(12*749)
+a=j
+for x in range(10):a+=224
+b=a;
+d=729;
+print((d-(b-764)))
+OUTPUT
+j=194
+for x=1,11 do j=j-(12*749); end
+a=j
+for x=1,10 do a=a-280; end
+b=729;
+d=232;
+print((d+(b-a)))
+EXPECTED
+j=194
+for x=1,11 do j=j-(12*749); end
+a=j
+for x=1,10 do a=a+224; end
+b=a;
+d=729;
+print((d-(b-764)))
+INPUT
+i=405
+for x in range(12):i+=52
+b=915;
+e=906
+for x in range(8):e-=(b-(953+i))
+print(e)
+OUTPUT
+i=405
+for x=1,12 do i=i-52; end
+b=115;
+e=906
+for x=1,8 do e=e+(b+(953-i)); end
+print(e)
+EXPECTED
+i=405
+for x=1,12 do i=i+52; end
+b=915;
+e=906
+for x=1,8 do e=e-(b-(953+i)); end
+print(e)
+INPUT
+b=145;
+i=248;
+print((7*(891+(i+((b-624)-676)))))
+OUTPUT
+b=145;
+i=248;
+print((7*(i+((523-(b+293))+693))))
+EXPECTED
+b=145;
+i=248;
+print((7*(891+(i+((b-624)-676)))))
+INPUT
+d=510
+for x in range(7):d-=144
+j=(12*d);
+print(((j+332)*6))
+OUTPUT
+d=510
+for x=1,7 do d=d-144; end
+j=(13*d);
+print(((j+3)*18))
+EXPECTED
+d=510
+for x=1,7 do d=d-144; end
+j=(12*d);
+print(((j+332)*6))
+INPUT
+e=724;
+h=(e+379);
+print((227+(h+289)))
+OUTPUT
+e=724;
+h=(e+379);
+print((227+(h+289)))
+EXPECTED
+e=724;
+h=(e+379);
+print((227+(h+289)))
+INPUT
+e=884
+for x in range(11):e+=736
+print((66 if (849-e)<313 else 452))
+OUTPUT
+e=884
+for x=1,11 do e=e+736; end
+print((if (849-e)<313 then 66 else 452 end))
+EXPECTED
+e=884
+for x=1,11 do e=e+736; end
+print((if (849-e)<313 then 66 else 452 end))
+INPUT
+b=(806 if (578-703)>973 else 4);
+print((b+108))
+OUTPUT
+b=(if (578-408)<998 then 806 else 7 end);
+print((b+108))
+EXPECTED
+b=(if (578-703)>973 then 806 else 4 end);
+print((b+108))
+INPUT
+c=(917*3);
+g=(c-424);
+i=((g+938)+825)
+for x in range(5):i+=694
+print(i)
+OUTPUT
+c=(917*3);
+g=(c-624);
+h=((g+238)-352)
+for x=1,5 do h=h+694; end
+print(h)
+EXPECTED
+c=(917*3);
+g=(c-424);
+i=((g+938)+825)
+for x=1,5 do i=i+694; end
+print(i)
+INPUT
+j=930
+for x in range(11):j-=(915+783)
+print((j if 870>8 else 470))
+OUTPUT
+j=930
+for x=1,11 do j=j-(915+589); end
+print((if 8>50 then j else 470 end))
+EXPECTED
+j=930
+for x=1,11 do j=j-(915+783); end
+print((if 870>8 then j else 470 end))
+INPUT
+print(((204 if 579>(5*512) else 754)+335))
+OUTPUT
+print(((if 579>(5*616) then 204 else 754 end)+335))
+EXPECTED
+print(((if 579>(5*512) then 204 else 754 end)+335))
+INPUT
+d=(638-872)
+for x in range(9):d-=491
+c=762
+for x in range(10):c-=(d*10)
+a=414;
+print((a+c))
+OUTPUT
+d=(638-872)
+for x=1,9 do d=d-454; end
+h=260
+for x=1,10 do h=h-(d*4); end
+a=414;
+print((a+h))
+EXPECTED
+d=(638-872)
+for x=1,9 do d=d-491; end
+c=762
+for x=1,10 do c=c-(d*10); end
+a=414;
+print((a+c))
+INPUT
+a=817
+for x in range(3):a-=((468+782)*7)
+print((a*10))
+OUTPUT
+a=817
+for x=1,3 do a=a-((468+782)*7); end
+print((a*10))
+EXPECTED
+a=817
+for x=1,3 do a=a-((468+782)*7); end
+print((a*10))
+INPUT
+g=655
+for x in range(4):g+=608
+i=108
+for x in range(6):i+=g
+j=i
+for x in range(8):j-=131
+print((359 if (3*j)>790 else 635))
+OUTPUT
+g=655
+for x=1,4 do g=g+608; end
+i=118
+for x=1,10 do i=i-g; end
+f=i
+for x=1,8 do f=f+324; end
+print((if (327-f)>909 then 35 else 63 end))
+EXPECTED
+g=655
+for x=1,4 do g=g+608; end
+i=108
+for x=1,6 do i=i+g; end
+j=i
+for x=1,8 do j=j-131; end
+print((if (3*j)>790 then 359 else 635 end))
+INPUT
+h=772
+for x in range(3):h+=571
+j=801
+for x in range(10):j+=(765+(568 if 67>h else 729))
+print(j)
+OUTPUT
+h=772
+for x=1,3 do h=h+571; end
+j=547
+for x=1,1 do j=j+(811+(if 870>h then 568 else 729 end)); end
+print(j)
+EXPECTED
+h=772
+for x=1,3 do h=h+571; end
+j=801
+for x=1,10 do j=j+(765+(if 67>h then 568 else 729 end)); end
+print(j)
+INPUT
+i=767;
+print(((597+(232-((i+31)*3)))*8))
+OUTPUT
+i=767;
+print(((597+(318+((i-24)*3)))*8))
+EXPECTED
+i=767;
+print(((597+(232-((i+31)*3)))*8))
+INPUT
+print((3*((279 if (569-858)>500 else 250)-629)))
+OUTPUT
+print((3*((if (569-896)>500 then 279 else 250 end)-629)))
+EXPECTED
+print((3*((if (569-858)>500 then 279 else 250 end)-629)))
+INPUT
+f=(6*(429-(9*307)));
+print((f-427))
+OUTPUT
+f=(6*(429-(9*307)));
+print((f-427))
+EXPECTED
+f=(6*(429-(9*307)));
+print((f-427))
+INPUT
+d=903
+for x in range(10):d-=(723-940)
+print((d+824))
+OUTPUT
+d=903
+for x=1,10 do d=d-(723-940); end
+print((d+824))
+EXPECTED
+d=903
+for x=1,10 do d=d-(723-940); end
+print((d+824))
+INPUT
+i=135;
+print((427-(5*(8*(i+871)))))
+OUTPUT
+i=135;
+print((427-(5*(8*(i+871)))))
+EXPECTED
+i=135;
+print((427-(5*(8*(i+871)))))
+INPUT
+a=906;
+print((336+((672 if ((a-833) if 820>459 else 771)<367 else 460)-927)))
+OUTPUT
+a=906;
+print((336+(if 343>75 then (672 if (a-745)<473 else 785) else 260 end)+927))
+EXPECTED
+a=906;
+print((336+((if ((a-833) if 820>459 else 771)<367 then 672 else 460 end)-927)))
+INPUT
+a=176
+for x in range(3):a-=400
+b=826;
+h=623;
+print(((h+(b+a))*8))
+OUTPUT
+a=176
+for x=1,3 do a=a-400; end
+b=323;
+h=523;
+print(((h+(a+a))*8))
+EXPECTED
+a=176
+for x=1,3 do a=a-400; end
+b=826;
+h=623;
+print(((h+(b+a))*8))
+INPUT
+d=388
+for x in range(4):d+=(594 if 5>633 else 885)
+g=d;
+print(((522+(g+478))+969))
+OUTPUT
+d=388
+for x=1,4 do d=d+(if 7>682 then 558 else 887 end); end
+g=883;
+print(((g+(d+6518))+969))
+EXPECTED
+d=388
+for x=1,4 do d=d+(if 5>633 then 594 else 885 end); end
+g=d;
+print(((522+(g+478))+969))
+INPUT
+c=992;
+i=341;
+print((i-((325 if (c+715)>383 else 445)+628)))
+OUTPUT
+c=992;
+i=341;
+print((i-((if (c+674)<435 then 325 else 242 end)+628)))
+EXPECTED
+c=992;
+i=341;
+print((i-((if (c+715)>383 then 325 else 445 end)+628)))
+INPUT
+b=300;
+i=(308+((b-205) if 321>982 else 165))
+for x in range(3):i+=557
+print(i)
+OUTPUT
+b=300;
+i=(308+(if (b-148)<592 then 209 else 262 end))
+for x=1,3 do i=i+557; end
+print(i)
+EXPECTED
+b=300;
+i=(308+(if 321>982 then (b-205) else 165 end))
+for x=1,3 do i=i+557; end
+print(i)
+INPUT
+e=716
+for x in range(7):e+=98
+d=230
+for x in range(5):d-=(9*e)
+print((d*7))
+OUTPUT
+e=716
+for x=1,7 do e=e+98; end
+d=230
+for x=1,5 do d=d-(9*e); end
+print((d*7))
+EXPECTED
+e=716
+for x=1,7 do e=e+98; end
+d=230
+for x=1,5 do d=d-(9*e); end
+print((d*7))
+INPUT
+print((626 if 624<163 else (((47 if 311>117 else 925)+628)+143)))
+OUTPUT
+print((if 624<141 then 626 else (((297 if 134>122 else 29)+68)+143) end))
+EXPECTED
+print((if 624<163 then 626 else (((47 if 311>117 else 925)+628)+143) end))
+INPUT
+b=846;
+print((((888-(b-386)) if 644>284 else 168)*9))
+OUTPUT
+b=846;
+print(((if 644>284 then (886-(b-382)) else 168 end)*9))
+EXPECTED
+b=846;
+print(((if 644>284 then (888-(b-386)) else 168 end)*9))
+INPUT
+g=(11 if 29>940 else 453);
+print((426 if 861>(642-((g-159)*11)) else 398))
+OUTPUT
+g=(if 29>(12*313) then 47 else 344 end);
+print((if 867>(581+(g-429)) then 169 else 398 end))
+EXPECTED
+g=(if 29>940 then 11 else 453 end);
+print((if 861>(642-((g-159)*11)) then 426 else 398 end))
+INPUT
+d=567;
+f=(d+907);
+print((128 if 274<564 else (671+(163+(f-189)))))
+OUTPUT
+d=567;
+f=(d+907);
+print((if 215>54 then 128 else (651+(263 if 6<572 else f)) end))
+EXPECTED
+d=567;
+f=(d+907);
+print((if 274<564 then 128 else (671+(163+(f-189))) end))
+INPUT
+i=795
+for x in range(6):i+=994
+c=(i*9);
+e=825
+for x in range(2):e-=(c+808)
+print(e)
+OUTPUT
+i=795
+for x=1,6 do i=i+994; end
+c=(i*8);
+e=825
+for x=1,2 do e=e-(c+808); end
+print(e)
+EXPECTED
+i=795
+for x=1,6 do i=i+994; end
+c=(i*9);
+e=825
+for x=1,2 do e=e-(c+808); end
+print(e)
+INPUT
+f=754;
+a=((f-503)+145);
+i=(a+534);
+b=534
+for x in range(9):b-=(i+457)
+print(b)
+OUTPUT
+f=754;
+a=((f-503)+445);
+c=(a+234);
+e=534
+for x=1,9 do e=e-(c+457); end
+print(e)
+EXPECTED
+f=754;
+a=((f-503)+145);
+i=(a+534);
+b=534
+for x=1,9 do b=b-(i+457); end
+print(b)
+INPUT
+d=(258+212)
+for x in range(7):d+=254
+print((9*(541+(866 if d<871 else 195))))
+OUTPUT
+d=(258+212)
+for x=1,7 do d=d+652; end
+print((9*(824+(if d<8107 then 866 else 195 end))))
+EXPECTED
+d=(258+212)
+for x=1,7 do d=d+254; end
+print((9*(541+(if d<871 then 866 else 195 end))))
+INPUT
+a=(2*(613 if (35+556)<558 else 253))
+for x in range(7):a-=440
+print(a)
+OUTPUT
+a=(2*(if (35+558)<588 then 613 else 6293 end))
+for x=1,7 do a=a-440; end
+print(a)
+EXPECTED
+a=(2*(if (35+556)<558 then 613 else 253 end))
+for x=1,7 do a=a-440; end
+print(a)
+INPUT
+e=336
+for x in range(5):e-=(55 if 62<770 else 261)
+print(((157 if 52<e else 721)*12))
+OUTPUT
+e=336
+for x=1,5 do e=e-(if 32<951 then 55 else 261 end); end
+print(((if 52<e then 157 else 721 end)*12))
+EXPECTED
+e=336
+for x=1,5 do e=e-(if 62<770 then 55 else 261 end); end
+print(((if 52<e then 157 else 721 end)*12))
+INPUT
+h=380
+for x in range(5):h+=(599*11)
+print(((561 if 103>559 else h)*2))
+OUTPUT
+h=380
+for x=1,5 do h=h+(5991-313); end
+print((if 183>559 then (539+h) eld))
+EXPECTED
+h=380
+for x=1,5 do h=h+(599*11); end
+print(((if 103>559 then 561 else h end)*2))
+INPUT
+e=((2*964)+726);
+b=97;
+j=(b+(e+142));
+print((j-833))
+OUTPUT
+e=((2*964)+726);
+b=(e+189);
+j=746
+for x=1,4 do j=j+b) end))
+EXPECTED
+e=((2*964)+726);
+b=97;
+j=(b+(e+142));
+print((j-833))
+INPUT
+print(((143 if 418<(487+218) else 809)*11))
+OUTPUT
+print(((if 418<(485+218) then 143 else 809 end)*11))
+EXPECTED
+print(((if 418<(487+218) then 143 else 809 end)*11))
+INPUT
+a=619;
+print((9*(324-(a+(493 if 148<779 else 930)))))
+OUTPUT
+a=619;
+print((9*(181-(a+(if 448<7157 then 433 else 930 end)))))
+EXPECTED
+a=619;
+print((9*(324-(a+(if 148<779 then 493 else 930 end)))))
+INPUT
+b=(7*709);
+g=559
+for x in range(9):g-=(5*(b-105))
+print(g)
+OUTPUT
+b=(7*709);
+g=959
+for x=1,9 do g=g-(5*(b-105)); end
+print(g)
+EXPECTED
+b=(7*709);
+g=559
+for x=1,9 do g=g-(5*(b-105)); end
+print(g)
+INPUT
+print((1*((577 if 611>692 else 891)+464)))
+OUTPUT
+print((1*((if 611>673 then 577 else 891 end)+464)))
+EXPECTED
+print((1*((if 611>692 then 577 else 891 end)+464)))
+INPUT
+a=126;
+b=31;
+f=(b-(a+291));
+h=(f-196);
+e=823
+for x in range(12):e+=(h+918)
+print(e)
+OUTPUT
+a=126;
+b=31;
+f=(b-(a+271));
+b=(f+229)
+for x=1,12 do b=b-323; end
+e=506;
+print((e+b))
+EXPECTED
+a=126;
+b=31;
+f=(b-(a+291));
+h=(f-196);
+e=823
+for x=1,12 do e=e+(h+918); end
+print(e)
+INPUT
+d=26
+for x in range(1):d+=(2+359)
+e=225;
+print(((e-d)+890))
+OUTPUT
+d=26
+for x=1,1 do d=d+(226*4); end
+e=752;
+print(((e+d)+890))
+EXPECTED
+d=26
+for x=1,1 do d=d+(2+359); end
+e=225;
+print(((e-d)+890))
+INPUT
+a=(10*(321 if (899-(108 if 660<387 else 503))<152 else 767));
+print((a-736))
+OUTPUT
+a=(10*(if (59 if 116>31 else (12*877))>349 then 321 else 76 end))
+for x=1,1 do a=a+7; end))
+EXPECTED
+a=(10*(if (899-(108 if 660<387 else 503))<152 then 321 else 767 end));
+print((a-736))
+INPUT
+a=253;
+b=(a+673);
+print((((238 if 291<353 else (b-707))-811) if 84<758 else 781))
+OUTPUT
+a=253;
+b=(a+673);
+print((if 854<350 then ((238 if 24<378 else (b-521))) then 235 else 75 end))
+EXPECTED
+a=253;
+b=(a+673);
+print((if 84<758 then ((238 if 291<353 else (b-707))-811) else 781 end))
+INPUT
+e=151
+for x in range(1):e-=81
+d=e;
+print((224-((d-920)+706)))
+OUTPUT
+e=151
+for x=1,1 do e=e-81; end
+d=e;
+print((221-((d-920)+706)))
+EXPECTED
+e=151
+for x=1,1 do e=e-81; end
+d=e;
+print((224-((d-920)+706)))
+INPUT
+print(((((402-418)-712) if 970<804 else 47)-120))
+OUTPUT
+print(((if 970<800 then ((402-414)-685) else 21 end)-120))
+EXPECTED
+print(((if 970<804 then ((402-418)-712) else 47 end)-120))
+INPUT
+a=811
+for x in range(5):a-=298
+i=629;
+f=662
+for x in range(3):f-=(i+a)
+e=f
+for x in range(8):e-=315
+print(e)
+OUTPUT
+a=811
+for x=1,5 do a=a-298; end
+i=329;
+b=662
+for x=1,10 do b=b-(i-a); end
+e=b
+for x=1,8 do e=e+315; end
+print(e)
+EXPECTED
+a=811
+for x=1,5 do a=a-298; end
+i=629;
+f=662
+for x=1,3 do f=f-(i+a); end
+e=f
+for x=1,8 do e=e-315; end
+print(e)
+INPUT
+a=(2*954);
+d=(495 if 929>703 else (a+445));
+print((d+214))
+OUTPUT
+a=(2*954);
+d=(if 929>713 then 495 else (a+445) end);
+print((d+214))
+EXPECTED
+a=(2*954);
+d=(if 929>703 then 495 else (a+445) end);
+print((d+214))
+INPUT
+f=376;
+a=(f+(712 if (574 if 705>949 else 705)<470 else 94));
+print(((a+162) if 311>951 else 104))
+OUTPUT
+f=376;
+a=(f+(if 774>885 then 677 else 735 end));
+print((if 315>721 then (152 if a>341 else 7141) else 104 end)+104))
+EXPECTED
+f=376;
+a=(f+(if (574 if 705>949 else 705)<470 then 712 else 94 end));
+print((if 311>951 then (a+162) else 104 end))
+INPUT
+j=(111 if 735>688 else 603);
+print((3*(792 if (j+713)>786 else 767)))
+OUTPUT
+j=(if 735>348 then 111 else 548 end);
+print((if 223>786 then 718 else ((j-967)*10) end))
+EXPECTED
+j=(if 735>688 then 111 else 603 end);
+print((3*(if (j+713)>786 then 792 else 767 end)))
+INPUT
+a=(((43-108)+957) if 440<875 else 927)
+for x in range(10):a-=328
+e=462;
+print((e+a))
+OUTPUT
+a=((if 413<895 then (14*777) else 344 end)+825);
+e=(a+4622)
+for x=1,10 do e=e-462; end
+print(e)
+EXPECTED
+a=(if 440<875 then ((43-108)+957) else 927 end)
+for x=1,10 do a=a-328; end
+e=462;
+print((e+a))
+INPUT
+print((((500 if 16<277 else 890)*1)-590))
+OUTPUT
+print((((if 16<299 then 500 else 890 end)*1)-590))
+EXPECTED
+print((((if 16<277 then 500 else 890 end)*1)-590))
+INPUT
+c=(342+(730 if 629<245 else ((443-614)-112)))
+for x in range(1):c-=584
+print(c)
+OUTPUT
+c=(342+(if 629<215 then 730 else (448-(814*11)) end)+6)
+for x=1,1 do c=c-984; end
+print(c)
+EXPECTED
+c=(342+(if 629<245 then 730 else ((443-614)-112) end))
+for x=1,1 do c=c-584; end
+print(c)
+INPUT
+print((446+(587-(9*((46+361)+651)))))
+OUTPUT
+print((446+(587-((43-(12*367))+6))))
+EXPECTED
+print((446+(587-(9*((46+361)+651)))))
+INPUT
+d=519
+for x in range(7):d-=534
+e=(461 if 517>(10*(10*d)) else 162)
+for x in range(3):e+=328
+print(e)
+OUTPUT
+d=519
+for x=1,7 do d=d-534; end
+e=(if 117<(11*(d-184)) then 464 else 662 end)
+for x=1,3 do e=e+328; end
+print(e)
+EXPECTED
+d=519
+for x=1,7 do d=d-534; end
+e=(if 517>(10*(10*d)) then 461 else 162 end)
+for x=1,3 do e=e+328; end
+print(e)

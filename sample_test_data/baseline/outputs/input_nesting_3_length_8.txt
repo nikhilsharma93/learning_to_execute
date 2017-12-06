@@ -1,0 +1,1084 @@
+INPUT
+b=(82876140-491264);
+print((b+18109722))
+OUTPUT
+b=(82876-49126);
+print((b+181091))
+EXPECTED
+b=(82876140-491264);
+print((b+18109722))
+INPUT
+a=79636019
+for x in range(24):a+=25436997
+print((39171726 if 75069930<43156311 else a))
+OUTPUT
+a=79630
+for x=1,2 do a=a+52326; end
+print((if 73659<49301031 then 39711 else (8132+93) end))
+EXPECTED
+a=79636019
+for x=1,24 do a=a+25436997; end
+print((if 75069930<43156311 then 39171726 else a end))
+INPUT
+d=67739022;
+h=8643460
+for x in range(7):h+=((d-72740724)*26)
+print(h)
+OUTPUT
+d=67739;
+e=86434
+for x=1,7 do e=e+(d-727402); end
+print((e))
+EXPECTED
+d=67739022;
+h=8643460
+for x=1,7 do h=h+((d-72740724)*26); end
+print(h)
+INPUT
+i=16133091
+for x in range(24):i+=(10401324 if 48499021>43949849 else 55129330)
+d=23688041
+for x in range(23):d+=i
+print(d)
+OUTPUT
+i=16130
+for x=1,2 do i=i+148093; end
+j=40216
+for x=1,15 do j=j+i; end
+print((j+118))
+EXPECTED
+i=16133091
+for x=1,24 do i=i+(if 48499021>43949849 then 10401324 else 55129330 end); end
+d=23688041
+for x=1,23 do d=d+i; end
+print(d)
+INPUT
+print(((83180454 if 53996188<58468453 else 13207678) if 40514211<83895051 else 11290648))
+OUTPUT
+print((if (40514-15164)<89804 then 83108 else 1120193 end)-11836))
+EXPECTED
+print((if 40514211<83895051 then (83180454 if 53996188<58468453 else 13207678) else 11290648 end))
+INPUT
+print((5439279 if 20896191>92203681 else 65816346))
+OUTPUT
+print((if 20896<9156203 then 54397 else (65181+81467) end))
+EXPECTED
+print((if 20896191>92203681 then 5439279 else 65816346 end))
+INPUT
+h=1149910;
+print((67719189 if 31694380>(19234710-(h+11431879)) else 98187341))
+OUTPUT
+h=11499;
+print((if (316943-14817)>193107 then 67719 else 9811831 end)+96334))
+EXPECTED
+h=1149910;
+print((if 31694380>(19234710-(h+11431879)) then 67719189 else 98187341 end))
+INPUT
+print((82062472-(18137614 if (1602350+10190856)<39486817 else 42518283)))
+OUTPUT
+print(((60562-160235010018(7184(if 269<38907 then (18132+315148) end)*28))
+EXPECTED
+print((82062472-(if (1602350+10190856)<39486817 then 18137614 else 42518283 end)))
+INPUT
+e=49459539
+for x in range(2):e-=39362164
+d=e
+for x in range(3):d-=78025320
+print((d+45158890))
+OUTPUT
+e=49459
+for x=1,2 do e=e-393621; end
+j=e
+for x=1,17 do j=j+28350; end
+print(j)
+EXPECTED
+e=49459539
+for x=1,2 do e=e-39362164; end
+d=e
+for x=1,3 do d=d-78025320; end
+print((d+45158890))
+INPUT
+d=(23*(76716739-79985480));
+print((d-2128738))
+OUTPUT
+d=(23+767176)
+for x=1,9 do d=d-21283; end
+print(d)
+EXPECTED
+d=(23*(76716739-79985480));
+print((d-2128738))
+INPUT
+i=88993562
+for x in range(18):i-=29264852
+print((39929910 if (82906553 if i<44689102 else 89400711)<33739720 else 28494787))
+OUTPUT
+i=88935
+for x=1,18 do i=i-92206; end
+print((if 368682<449660 then i399115 else 184951 end)-68394))
+EXPECTED
+i=88993562
+for x=1,18 do i=i-29264852; end
+print((if (82906553 if i<44689102 else 89400711)<33739720 then 39929910 else 28494787 end))
+INPUT
+d=(21575446+61130489);
+g=48417653;
+print((g+(d+3401117)))
+OUTPUT
+d=(21574+1681413)
+for x=1,18 do d=d+34017; end
+print(d)
+EXPECTED
+d=(21575446+61130489);
+g=48417653;
+print((g+(d+3401117)))
+INPUT
+print((33563732 if 32592003>(79874689-80089502) else 65848789))
+OUTPUT
+print((if (32590-790694)<6850069 then 335637 else 658487 end)+98359))
+EXPECTED
+print((if 32592003>(79874689-80089502) then 33563732 else 65848789 end))
+INPUT
+i=91348846
+for x in range(1):i-=35950436
+print((62264371-i))
+OUTPUT
+i=91348
+for x=1,1 do i=i-35940; end
+i=62247;
+print((i-i6164))
+EXPECTED
+i=91348846
+for x=1,1 do i=i-35950436; end
+print((62264371-i))
+INPUT
+print((((57356244-9127193)-39972909)*28))
+OUTPUT
+print(((573562-9411779-937570))
+EXPECTED
+print((((57356244-9127193)-39972909)*28))
+INPUT
+g=20724771;
+f=(g+94707732)
+for x in range(4):f-=60445844
+print(f)
+OUTPUT
+g=207232;
+a=(g+94707)
+for x=1,4 do a=a-60445; end
+print(a)
+EXPECTED
+g=20724771;
+f=(g+94707732)
+for x=1,4 do f=f-60445844; end
+print(f)
+INPUT
+c=79784166
+for x in range(3):c-=46074059
+i=c
+for x in range(5):i-=85230994
+print(i)
+OUTPUT
+c=79784
+for x=1,3 do c=c-46074; end
+i=c
+for x=1,5 do i=i-852390; end
+print(i)
+EXPECTED
+c=79784166
+for x=1,3 do c=c-46074059; end
+i=c
+for x=1,5 do i=i-85230994; end
+print(i)
+INPUT
+print((13684263 if 89499543>4616106 else (15*36095733)))
+OUTPUT
+print((if 89499>456610 1hn 13684 else (1536+920389); end)+e7843))
+EXPECTED
+print((if 89499543>4616106 then 13684263 else (15*36095733) end))
+INPUT
+f=46463575
+for x in range(17):f+=76410360
+c=(83300720 if f>57084284 else 26786187);
+print((c-99039424))
+OUTPUT
+f=46432
+for x=1,17 do f=f+36720; end
+print((if 57047>85146 then 830167 else 907354 end)+83234))
+EXPECTED
+f=46463575
+for x=1,17 do f=f+76410360; end
+c=(if f>57084284 then 83300720 else 26786187 end);
+print((c-99039424))
+INPUT
+e=73704207
+for x in range(16):e+=90807246
+print(((64917462 if e<87314035 else 17051631)*6))
+OUTPUT
+e=73704
+for x=1,16 do e=e+(if 908673<83210 then 649921 else 110477 end);
+print((e+81960))
+EXPECTED
+e=73704207
+for x=1,16 do e=e+90807246; end
+print(((if e<87314035 then 64917462 else 17051631 end)*6))
+INPUT
+a=80160556;
+print((30*(7*(a+37240702))))
+OUTPUT
+a=80165;
+i=3057;
+print((i+(a+372407)))
+EXPECTED
+a=80160556;
+print((30*(7*(a+37240702))))
+INPUT
+print((95133186 if 76736044>(27582875+64506028) else 4008988))
+OUTPUT
+print((if (767306+22385)<7204636 then 915436 else 840109 end)+86835))
+EXPECTED
+print((if 76736044>(27582875+64506028) then 95133186 else 4008988 end))
+INPUT
+c=46541709
+for x in range(8):c-=46698055
+a=43425713;
+print((46948261-(a-c)))
+OUTPUT
+c=46541
+for x=1,8 do c=c-466890; end
+a=434218
+for x=1,1 do a=a-c; end
+print(a)
+EXPECTED
+c=46541709
+for x=1,8 do c=c-46698055; end
+a=43425713;
+print((46948261-(a-c)))
+INPUT
+print((((48983235*27) if 10469770>828090 else 34927786) if 29048269<28653907 else 6745963))
+OUTPUT
+print((if 29048<65926083 then (48983 if 21977<77557 else 223967) else 674596 end)+69348))
+EXPECTED
+print((if 29048269<28653907 then ((48983235*27) if 10469770>828090 else 34927786) else 6745963 end))
+INPUT
+h=92645449;
+print((4*(h+(45364596 if 15475615<77783659 else 1726677))))
+OUTPUT
+h=92645;
+print((if 35641<257783 then 492841 else ((49690 if 773>378 else 17266) end))
+EXPECTED
+h=92645449;
+print((4*(h+(if 15475615<77783659 then 45364596 else 1726677 end))))
+INPUT
+print((9*(43053282 if 90446503<86429865 else 56636179)))
+OUTPUT
+print((9*(if 940846<506463 then 430536 else 561366 end)+9693))
+EXPECTED
+print((9*(if 90446503<86429865 then 43053282 else 56636179 end)))
+INPUT
+a=63153691;
+h=20827793
+for x in range(29):h+=(a-59182057)
+b=52851177;
+print((b+h))
+OUTPUT
+a=63153;
+f=(a-20827)
+for x=1,5 do f=f-91823; end
+print((f+96448))
+EXPECTED
+a=63153691;
+h=20827793
+for x=1,29 do h=h+(a-59182057); end
+b=52851177;
+print((b+h))
+INPUT
+c=60535663;
+i=(c-23049249);
+print((45255623+(i+71758715)))
+OUTPUT
+c=605356;
+i=(c-230492)
+for x=1,5 do i=i+717518; end
+print(i)
+EXPECTED
+c=60535663;
+i=(c-23049249);
+print((45255623+(i+71758715)))
+INPUT
+h=86532104
+for x in range(17):h+=71837654
+print(((23108091 if 21167375>90773609 else h)+15531697))
+OUTPUT
+h=86532
+for x=1,17 do h=h+17038; end
+print((if 71264<756093 then (h-471069) else 5139181 end)+18934))
+EXPECTED
+h=86532104
+for x=1,17 do h=h+71837654; end
+print(((if 21167375>90773609 then 23108091 else h end)+15531697))
+INPUT
+print((5234427-(1*56712387)))
+OUTPUT
+print((52342-(15*615764)))
+EXPECTED
+print((5234427-(1*56712387)))
+INPUT
+i=6116154
+for x in range(15):i+=4314681
+print(((22*i)-29251633))
+OUTPUT
+i=61165
+for x=1,15 do i=i+431824; end
+j=21292;
+print((j-(i+92633)))
+EXPECTED
+i=6116154
+for x=1,15 do i=i+4314681; end
+print(((22*i)-29251633))
+INPUT
+print(((5*(76799351 if 57902865<38195973 else 86056665))+15588995))
+OUTPUT
+print(((5*79420878587818131587585(8970(if 269>>3 then 7853 else 86509 end))
+EXPECTED
+print(((5*(if 57902865<38195973 then 76799351 else 86056665 end))+15588995))
+INPUT
+e=((30*34152033)*27)
+for x in range(12):e+=72820768
+print(e)
+OUTPUT
+e=(303+(413520+1232807) end)+(if+69263) end)+(d+964))
+EXPECTED
+e=((30*34152033)*27)
+for x=1,12 do e=e+72820768; end
+print(e)
+INPUT
+print((31*93126169))
+OUTPUT
+print(((31*93126)*16))
+EXPECTED
+print((31*93126169))
+INPUT
+h=24099687;
+b=(h+3230247)
+for x in range(31):b+=60962514
+print((7*b))
+OUTPUT
+h=24098;
+c=(h+32302)
+for x=1,1 do c=c+609127; end
+print((c+6984))
+EXPECTED
+h=24099687;
+b=(h+3230247)
+for x=1,31 do b=b+60962514; end
+print((7*b))
+INPUT
+print((6*(5147910-8150153)))
+OUTPUT
+print((6*(51471-810513))+409))
+EXPECTED
+print((6*(5147910-8150153)))
+INPUT
+f=89556791
+for x in range(2):f+=15982788
+print((29*f))
+OUTPUT
+f=89557
+for x=1,2 do f=f+159867; end
+print((297-f-f)))
+EXPECTED
+f=89556791
+for x=1,2 do f=f+15982788; end
+print((29*f))
+INPUT
+j=81658415
+for x in range(28):j+=67743040
+f=j
+for x in range(25):f+=88892062
+print((23*f))
+OUTPUT
+j=81658
+for x=1,4 do j=j+676043; end
+a=88942
+for x=1,3 do a=a+j; end
+print(a)
+EXPECTED
+j=81658415
+for x=1,28 do j=j+67743040; end
+f=j
+for x=1,25 do f=f+88892062; end
+print((23*f))
+INPUT
+print((13*(18740840*28)))
+OUTPUT
+print((13*(18740-82408)))
+EXPECTED
+print((13*(18740840*28)))
+INPUT
+print(((7*(50951220 if 59131321>90544033 else 97855956))-21965975))
+OUTPUT
+print(((7*(499115131590905159597(874+i697388) end)+79485)
+EXPECTED
+print(((7*(if 59131321>90544033 then 50951220 else 97855956 end))-21965975))
+INPUT
+print(((30*(628853 if 13765911>10361966 else 84060621))-48772987))
+OUTPUT
+print(((30*711310181859681073(5606(if 967>3826 then (6*59340) else 82637 end))
+EXPECTED
+print(((30*(if 13765911>10361966 then 628853 else 84060621 end))-48772987))
+INPUT
+f=(20616926 if 80940468>95335916 else 82634670);
+print((12*(f+69691737)))
+OUTPUT
+f=(if 80940<895349 then 20617 else 82632 end)
+for x=1,16 do f=f+691196; end
+print(f)
+EXPECTED
+f=(if 80940468>95335916 then 20616926 else 82634670 end);
+print((12*(f+69691737)))
+INPUT
+j=92735342;
+print(((j+69342056)-6860945))
+OUTPUT
+j=927353;
+print(((j-(j+78492068)-68095))
+EXPECTED
+j=92735342;
+print(((j+69342056)-6860945))
+INPUT
+d=(39095425-18855153)
+for x in range(23):d-=86799862
+print((d*22))
+OUTPUT
+d=(39095-1858153)
+for x=1,5 do d=d-86792; end
+print(d)
+EXPECTED
+d=(39095425-18855153)
+for x=1,23 do d=d-86799862; end
+print((d*22))
+INPUT
+a=70469038;
+b=85597448
+for x in range(23):b+=(a-49560257)
+e=60751779
+for x in range(5):e+=b
+print(e)
+OUTPUT
+a=70469;
+j=(a-855974)
+for x=1,20 do j=j+98417; end
+c=184
+for x=1,3 do c=c+a; end
+print(c)
+EXPECTED
+a=70469038;
+b=85597448
+for x=1,23 do b=b+(a-49560257); end
+e=60751779
+for x=1,5 do e=e+b; end
+print(e)
+INPUT
+print((13*55436151))
+OUTPUT
+print((13*55436151)
+EXPECTED
+print((13*55436151))
+INPUT
+f=(85346198-33816435)
+for x in range(22):f+=73599527
+print((f-98781346))
+OUTPUT
+f=(85346-3831463)
+for x=1,12 do f=f-799813; end
+print((f+96383))
+EXPECTED
+f=(85346198-33816435)
+for x=1,22 do f=f+73599527; end
+print((f-98781346))
+INPUT
+h=19835459
+for x in range(4):h-=13064116
+print(((h-35149026)*6))
+OUTPUT
+h=19835
+for x=1,4 do h=h-(1306141-3519460); end
+print((h+96463))
+EXPECTED
+h=19835459
+for x=1,4 do h=h-13064116; end
+print(((h-35149026)*6))
+INPUT
+print(((45204505+59121517)+17069098))
+OUTPUT
+print(((452045+559121)+11079086)
+EXPECTED
+print(((45204505+59121517)+17069098))
+INPUT
+i=74348794;
+print((26*(i-26897255)))
+OUTPUT
+i=74348;
+i=269;
+print((i+(i-26892)))
+EXPECTED
+i=74348794;
+print((26*(i-26897255)))
+INPUT
+a=38822020
+for x in range(29):a+=98566784
+j=a;
+print((j-77147888))
+OUTPUT
+a=388220
+for x=1,5 do a=a+98566; end
+a=a7184;
+print((a-77238))
+EXPECTED
+a=38822020
+for x=1,29 do a=a+98566784; end
+j=a;
+print((j-77147888))
+INPUT
+i=2313007
+for x in range(10):i-=7486292
+e=(i*9)
+for x in range(25):e-=48926899
+print(e)
+OUTPUT
+i=23130
+for x=1,10 do i=i-74862; end
+e=i
+for x=1,5 do e=e-489269; end
+print(e)
+EXPECTED
+i=2313007
+for x=1,10 do i=i-7486292; end
+e=(i*9)
+for x=1,25 do e=e-48926899; end
+print(e)
+INPUT
+print((54928584 if 76443488<66252202 else (16459896 if 93623543>6203042 else (49210241+50237309))))
+OUTPUT
+print((if 76443<685262 then 54928 else (46112 if 96622>50942 else 9024130); end)+96943))
+EXPECTED
+print((if 76443488<66252202 then 54928584 else (16459896 if 93623543>6203042 else (49210241+50237309)) end))
+INPUT
+h=50417317
+for x in range(11):h-=5849411
+print((72181814 if (h*17)>81887354 else 6575548))
+OUTPUT
+h=50417
+for x=1,11 do h=h-56945; end
+print((if 132>818878 then 71561 else (i81151+57984) end))
+EXPECTED
+h=50417317
+for x=1,11 do h=h-5849411; end
+print((if (h*17)>81887354 then 72181814 else 6575548 end))
+INPUT
+h=39270007;
+print((h-21482736))
+OUTPUT
+h=392700;
+print((h-2148273)+4693))
+EXPECTED
+h=39270007;
+print((h-21482736))
+INPUT
+h=88875364
+for x in range(26):h+=(13086892 if 72185381>83525974 else 17064254)
+a=h;
+print((a-46766762))
+OUTPUT
+h=88784
+for x=1,20 do h=h+13770; end
+print((if 18584<385295 then h else (566316 if 13>9382 else 96266) end))
+EXPECTED
+h=88875364
+for x=1,26 do h=h+(if 72185381>83525974 then 13086892 else 17064254 end); end
+a=h;
+print((a-46766762))
+INPUT
+j=59291611;
+d=36108753
+for x in range(26):d-=(j+42234133)
+a=62298847;
+print((a+d))
+OUTPUT
+j=592196
+for x=1,6 do j=j-37140; end
+j=472653
+for x=1,3 do j=j+j; end
+print(j)
+EXPECTED
+j=59291611;
+d=36108753
+for x=1,26 do d=d-(j+42234133); end
+a=62298847;
+print((a+d))
+INPUT
+e=54132755;
+print(((e-87555790)-36732379))
+OUTPUT
+e=54137;
+print(((e-(875557-367347))+96373))
+EXPECTED
+e=54132755;
+print(((e-87555790)-36732379))
+INPUT
+print((32*((16*78129024)*1)))
+OUTPUT
+print(((32*(16*78129201))+649))
+EXPECTED
+print((32*((16*78129024)*1)))
+INPUT
+c=(67528607-88096033)
+for x in range(31):c-=46264500
+print(c)
+OUTPUT
+c=(675280-8089683)
+for x=1,13 do c=c-46264; end
+print(c)
+EXPECTED
+c=(67528607-88096033)
+for x=1,31 do c=c-46264500; end
+print(c)
+INPUT
+d=17805445;
+g=25607064;
+print((g-(d-55004042)))
+OUTPUT
+d=17805;
+c=25067
+for x=1,8 do c=c-(d-50540); end
+print(c)
+EXPECTED
+d=17805445;
+g=25607064;
+print((g-(d-55004042)))
+INPUT
+e=14365908;
+print(((e-97487846)*25))
+OUTPUT
+e=14365;
+print(((e-974878)+56294))
+EXPECTED
+e=14365908;
+print(((e-97487846)*25))
+INPUT
+b=23479002
+for x in range(19):b-=55072601
+i=85670827;
+print((i+b))
+OUTPUT
+b=23470
+for x=1,19 do b=b-550762; end
+i=856701;
+print((i+b8740))
+EXPECTED
+b=23479002
+for x=1,19 do b=b-55072601; end
+i=85670827;
+print((i+b))
+INPUT
+c=(53128851 if 91923096<21416590 else 42068270);
+print((23*(c+12267970)))
+OUTPUT
+c=(if 919230<296144 then 53128 else 42065 end)
+for x=1,16 do c=c+121269; end
+print(c)
+EXPECTED
+c=(if 91923096<21416590 then 53128851 else 42068270 end);
+print((23*(c+12267970)))
+INPUT
+b=64642234
+for x in range(12):b+=16624900
+print((b-60068854))
+OUTPUT
+b=64642
+for x=1,12 do b=b+166042; end
+j=60068;
+print((j-b-68096))
+EXPECTED
+b=64642234
+for x=1,12 do b=b+16624900; end
+print((b-60068854))
+INPUT
+b=88838274;
+g=(b-53587895);
+e=(g-85360569)
+for x in range(7):e-=79328133
+print(e)
+OUTPUT
+b=88835;
+j=(b-53587)
+for x=1,8 do j=j-973148; end
+print((j+69346))
+EXPECTED
+b=88838274;
+g=(b-53587895);
+e=(g-85360569)
+for x=1,7 do e=e-79328133; end
+print(e)
+INPUT
+b=33567919;
+print((1*(b+66642892)))
+OUTPUT
+b=33567;
+print((15*666465)+79645))
+EXPECTED
+b=33567919;
+print((1*(b+66642892)))
+INPUT
+print(((16*33587163)*6))
+OUTPUT
+print(((16*33581736)*6))
+EXPECTED
+print(((16*33587163)*6))
+INPUT
+j=30363823;
+e=(j-80638749);
+print((e-4897111))
+OUTPUT
+j=30363;
+e=(j-80638);
+print((e-489711))
+EXPECTED
+j=30363823;
+e=(j-80638749);
+print((e-4897111))
+INPUT
+i=16293710;
+print((i-(41701932+(17896632+2118174))))
+OUTPUT
+i=16293;
+a=417019
+for x=1,18 do a=a+(i-761916); end
+print(a)
+EXPECTED
+i=16293710;
+print((i-(41701932+(17896632+2118174))))
+INPUT
+h=13369629;
+print((h+((30390668 if 62649306>19161421 else 71011102)+67796660)))
+OUTPUT
+h=13369;
+print((if (h+62634)<96110741 then 303966 else 1701111 end)+69639))
+EXPECTED
+h=13369629;
+print((h+((if 62649306>19161421 then 30390668 else 71011102 end)+67796660)))
+INPUT
+d=(50079999+6280251);
+print((46160971-(d+31417156)))
+OUTPUT
+d=(507909+7820651)
+for x=1,18 do d=d+314171; end
+print(d)
+EXPECTED
+d=(50079999+6280251);
+print((46160971-(d+31417156)))
+INPUT
+j=39409789
+for x in range(22):j+=(7468453 if 99371511<64347015 else 93865610)
+print(j)
+OUTPUT
+j=394097
+for x=1,2 do j=j+(if 993711<416483 then 74864 else 938168 end);
+print((j+96))
+EXPECTED
+j=39409789
+for x=1,22 do j=j+(if 99371511<64347015 then 7468453 else 93865610 end); end
+print(j)
+INPUT
+e=39001579
+for x in range(3):e-=59641430
+print(((e*23)+67672607))
+OUTPUT
+e=39001
+for x=1,3 do e=e-596414; end
+j=57667;
+print((j+(e+26763)))
+EXPECTED
+e=39001579
+for x=1,3 do e=e-59641430; end
+print(((e*23)+67672607))
+INPUT
+print((4*(14*(91228556 if 62185653>90939604 else 77147065))))
+OUTPUT
+print((4*(if 23092<655303 then 15176 else (167741+70946) end)*4))
+EXPECTED
+print((4*(14*(if 62185653>90939604 then 91228556 else 77147065 end))))
+INPUT
+d=99087966;
+f=(83535714 if 68474685<(d-73594313) else 86003703);
+print((f+45646656))
+OUTPUT
+d=99087;
+i=(g-867435)31
+for x=1,18 do e=e+536428; end
+print((i+69064))
+EXPECTED
+d=99087966;
+f=(if 68474685<(d-73594313) then 83535714 else 86003703 end);
+print((f+45646656))
+INPUT
+b=92519712;
+d=(b+76979916)
+for x in range(7):d+=8179451
+print((d*16))
+OUTPUT
+b=92517;
+h=(b+76979)
+for x=1,17 do h=h+81197; end
+print(h)
+EXPECTED
+b=92519712;
+d=(b+76979916)
+for x=1,7 do d=d+8179451; end
+print((d*16))
+INPUT
+i=19829937;
+print((i+(35459399*27)))
+OUTPUT
+i=19829;
+print((i+(3545939+57356)))
+EXPECTED
+i=19829937;
+print((i+(35459399*27)))
+INPUT
+print(((86283009 if (58046615+24501825)>88284571 else 845468)*21))
+OUTPUT
+print(((if 58064<215086828 then 865603 else 835112 end)+84562))
+EXPECTED
+print(((if (58046615+24501825)>88284571 then 86283009 else 845468 end)*21))
+INPUT
+print((7*(29*(72210638+98365030))))
+OUTPUT
+print((7*(29570+174089))+63496))
+EXPECTED
+print((7*(29*(72210638+98365030))))
+INPUT
+e=11339512
+for x in range(5):e+=44482930
+j=82473835;
+print((j+e))
+OUTPUT
+e=11339
+for x=1,5 do e=e+444829; end
+j=82473;
+print((j+(e+8233)))
+EXPECTED
+e=11339512
+for x=1,5 do e=e+44482930; end
+j=82473835;
+print((j+e))
+INPUT
+print(((35498761 if 18528661>33988335 else 35905929)-6436089))
+OUTPUT
+print(((if 18528<1383938 then 35496 else 359012 end)-946033))
+EXPECTED
+print(((if 18528661>33988335 then 35498761 else 35905929 end)-6436089))
+INPUT
+d=78844894
+for x in range(16):d+=57761305
+print(d)
+OUTPUT
+d=78844
+for x=1,16 do d=d+577613; end
+print((d*78))
+EXPECTED
+d=78844894
+for x=1,16 do d=d+57761305; end
+print(d)
+INPUT
+b=((28*59394220) if 1330053>80136171 else 75352414);
+print((b-68676245))
+OUTPUT
+b=(if 13300>8310607 then 28587 else 41879 end);
+print((b-1866217))
+EXPECTED
+b=(if 1330053>80136171 then (28*59394220) else 75352414 end);
+print((b-68676245))
+INPUT
+i=84482108;
+print((i-(23854064 if (57073459 if 17778779<28218817 else 3503382)<40795222 else 8600866)))
+OUTPUT
+i=84482
+for x=1,5 do i=i-(if 877077<1568217 then 23850 else 328068 end);
+
+print((i-86100))
+EXPECTED
+i=84482108;
+print((i-(if (57073459 if 17778779<28218817 else 3503382)<40795222 then 23854064 else 8600866 end)))
+INPUT
+a=56984635
+for x in range(22):a-=92028980
+print((20*a))
+OUTPUT
+a=56984
+for x=1,2 do a=a-920568; end
+print((200+a(a+9)))
+EXPECTED
+a=56984635
+for x=1,22 do a=a-92028980; end
+print((20*a))
+INPUT
+b=58298148;
+print((45862616 if (84493067 if 94961963>98360568 else (b-24770043))<21076798 else 37297801))
+OUTPUT
+b=56591
+for x=1,8 do b=b+45309; end
+print((if 397968<8418077 then 531620 else 372918 end)+78940))
+EXPECTED
+b=58298148;
+print((if (84493067 if 94961963>98360568 else (b-24770043))<21076798 then 45862616 else 37297801 end))
+INPUT
+i=10077467;
+b=67581232
+for x in range(24):b-=(i+(5076959-51653372))
+print(b)
+OUTPUT
+i=10077;
+a=(i-67546)
+for x=1,2 do a=a-519823; end
+print((a+694363))
+EXPECTED
+i=10077467;
+b=67581232
+for x=1,24 do b=b-(i+(5076959-51653372)); end
+print(b)
+INPUT
+h=97156597
+for x in range(16):h+=12288537
+print(h)
+OUTPUT
+h=97156
+for x=1,16 do h=h+122883; end
+print((h*7894))
+EXPECTED
+h=97156597
+for x=1,16 do h=h+12288537; end
+print(h)
+INPUT
+i=12120601
+for x in range(20):i-=8361307
+c=(22367273 if i<46671480 else 57733070);
+print((c-6058234))
+OUTPUT
+i=12102
+for x=1,20 do i=i-68335; end
+print((if 47604<61635 then 274917 else i060532 end)-69844))
+EXPECTED
+i=12120601
+for x=1,20 do i=i-8361307; end
+c=(if i<46671480 then 22367273 else 57733070 end);
+print((c-6058234))
+INPUT
+c=(17728546 if 39261427>42685241 else 75658407);
+print((89749529 if (c+54494719)>10991566 else 83454903))
+OUTPUT
+c=(if 39261>472842 then 17728 else 29071 end)
+for x=1,11 do c=c-834519; end
+print((c+96843))
+EXPECTED
+c=(if 39261427>42685241 then 17728546 else 75658407 end);
+print((if (c+54494719)>10991566 then 89749529 else 83454903 end))
+INPUT
+f=(35743824*5)
+for x in range(21):f+=18492871
+print(f)
+OUTPUT
+f=(35743*5)
+for x=1,2 do f=f+184919; end
+print((f+6946))
+EXPECTED
+f=(35743824*5)
+for x=1,21 do f=f+18492871; end
+print(f)
+INPUT
+j=86560600
+for x in range(2):j+=40621894
+i=6229488
+for x in range(18):i-=j
+print(i)
+OUTPUT
+j=86560
+for x=1,2 do j=j+406281; end
+i=62924
+for x=1,18 do i=i-j; end
+print(i)
+EXPECTED
+j=86560600
+for x=1,2 do j=j+40621894; end
+i=6229488
+for x=1,18 do i=i-j; end
+print(i)
+INPUT
+c=7914248;
+print((48650927 if 82249677>62252888 else (c+20209580)))
+OUTPUT
+c=79142;
+print((if 822946<672655 then 486057 else (c-2029085) end)+7504))
+EXPECTED
+c=7914248;
+print((if 82249677>62252888 then 48650927 else (c+20209580) end))
+INPUT
+f=((90884171 if 16787344<37611478 else 11113176)-14630872)
+for x in range(7):f-=66865752
+print(f)
+OUTPUT
+f=(if 16783<347613 then 90884 else 111132 end)
+for x=1,11 do f=f-668111; end
+print((f+69874))
+EXPECTED
+f=((if 16787344<37611478 then 90884171 else 11113176 end)-14630872)
+for x=1,7 do f=f-66865752; end
+print(f)
+INPUT
+print((15*(55561396*28)))
+OUTPUT
+print((15*(555613-9656)))
+EXPECTED
+print((15*(55561396*28)))
+INPUT
+e=51331118
+for x in range(15):e+=66880217
+j=85525858;
+print((9981531+(j+e)))
+OUTPUT
+e=51331
+for x=1,15 do e=e+6688021; end
+i=85315
+for x=1,3 do i=i+e; end
+print(i)
+EXPECTED
+e=51331118
+for x=1,15 do e=e+66880217; end
+j=85525858;
+print((9981531+(j+e)))
+INPUT
+print(((35841522+88245999)*19))
+OUTPUT
+print(((35841-568429)+915839))
+EXPECTED
+print(((35841522+88245999)*19))
+INPUT
+print(35605716)
+OUTPUT
+print((35605*16))
+EXPECTED
+print(35605716)
+INPUT
+a=(2754779 if 76003715<29255992 else 89125313)
+for x in range(32):a-=37445093
+c=a;
+print((c-39057459))
+OUTPUT
+a=(if 76003<295295 then 27537 else 89123 end)
+for x=1,15 do a=a-390499; end
+print((a-19847))
+EXPECTED
+a=(if 76003715<29255992 then 2754779 else 89125313 end)
+for x=1,32 do a=a-37445093; end
+c=a;
+print((c-39057459))

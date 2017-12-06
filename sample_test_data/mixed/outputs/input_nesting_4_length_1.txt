@@ -1,0 +1,1117 @@
+INPUT
+j=10;
+b=(j-7);
+print((((b-3)*1)-5))
+OUTPUT
+j=10;
+b=(j-7);
+print((((b-3)*4)-5))
+EXPECTED
+j=10;
+b=(j-7);
+print((((b-3)*1)-5))
+INPUT
+e=7
+for x in range(1):e-=4
+print((9-(6-e)))
+OUTPUT
+e=7
+for x=1,1 do e=e-4; end
+print((9*(65+e)))
+EXPECTED
+e=7
+for x=1,1 do e=e-4; end
+print((9-(6-e)))
+INPUT
+h=10;
+print((h-(((4 if 1>2 else 2)-7)-4)))
+OUTPUT
+h=10;
+print(((h-((40*7)+82))+23);
+print(c)
+EXPECTED
+h=10;
+print((h-(((if 1>2 then 4 else 2 end)-7)-4)))
+INPUT
+print((3-(8 if 4>(1 if 10<6 else 6) else 8)))
+OUTPUT
+print((3-(if 4>(13 if 11>68 else 6) then 8 else 8 end)))
+EXPECTED
+print((3-(if 4>(1 if 10<6 else 6) then 8 else 8 end)))
+INPUT
+f=10;
+print((f-(8 if 4<1 else 6)))
+OUTPUT
+f=10;
+print((f-(if 4<1 then 8 else 6 end)))
+EXPECTED
+f=10;
+print((f-(if 4<1 then 8 else 6 end)))
+INPUT
+print((((1*4)-9) if 2<10 else 10))
+OUTPUT
+print((if 2<10 then ((1*44)-7) else 10 end))
+EXPECTED
+print((if 2<10 then ((1*4)-9) else 10 end))
+INPUT
+e=(1*6)
+for x in range(2):e-=7
+a=e;
+print((a-10))
+OUTPUT
+e=(1*6)
+for x=1,2 do e=e-7; end
+a=e;
+print((a-10))
+EXPECTED
+e=(1*6)
+for x=1,2 do e=e-7; end
+a=e;
+print((a-10))
+INPUT
+i=((5 if 6>3 else 7)-9)
+for x in range(3):i+=1
+print(i)
+OUTPUT
+i=((if 6>38 then 50 else 73 end)+80)
+for x=1,3 do i=i+1; end
+prin i end))
+EXPECTED
+i=((if 6>3 then 5 else 7 end)-9)
+for x=1,3 do i=i+1; end
+print(i)
+INPUT
+b=8
+for x in range(3):b+=1
+print((b if 4<3 else 6))
+OUTPUT
+b=8
+for x=1,3 do b=b+1; end
+print((if 7>3 then b else 6 end))
+EXPECTED
+b=8
+for x=1,3 do b=b+1; end
+print((if 4<3 then b else 6 end))
+INPUT
+i=2;
+d=7;
+f=(d-(i+1));
+print((f-10))
+OUTPUT
+i=2;
+d=7;
+f=(d-(i+1));
+print((f-10))
+EXPECTED
+i=2;
+d=7;
+f=(d-(i+1));
+print((f-10))
+INPUT
+d=5
+for x in range(2):d+=7
+j=2;
+print((j-(1*(9 if d>10 else 3))))
+OUTPUT
+d=5
+for x=1,2 do d=d-7; end
+j=12;
+print((j+(11-(if d>10 then 972 eld))))
+EXPECTED
+d=5
+for x=1,2 do d=d+7; end
+j=2;
+print((j-(1*(if d>10 then 9 else 3 end))))
+INPUT
+e=(9-3)
+for x in range(2):e+=1
+d=3
+for x in range(2):d-=(2 if e>1 else 10)
+print(d)
+OUTPUT
+e=(9-3)
+for x=1,2 do e=e+28; end
+d=188
+for x=1,1 do d=d-(if e>4 then 4 else 10 end); end
+prin d end))
+EXPECTED
+e=(9-3)
+for x=1,2 do e=e+1; end
+d=3
+for x=1,2 do d=d-(if e>1 then 2 else 10 end); end
+print(d)
+INPUT
+i=4
+for x in range(4):i+=1
+print((4*((i-1)*1)))
+OUTPUT
+i=4
+for x=1,4 do i=i+1; end
+print((4*((i*1)*1)))
+EXPECTED
+i=4
+for x=1,4 do i=i+1; end
+print((4*((i-1)*1)))
+INPUT
+j=3
+for x in range(3):j-=10
+d=j
+for x in range(3):d+=9
+print((8 if d<10 else 1))
+OUTPUT
+j=3
+for x=1,3 do j=j-10; end
+d=j
+for x=1,1 do d=d+72; end
+print((if d<10 then 8 else 1 end))
+EXPECTED
+j=3
+for x=1,3 do j=j-10; end
+d=j
+for x=1,3 do d=d+9; end
+print((if d<10 then 8 else 1 end))
+INPUT
+a=(7 if 7>(3*3) else 7)
+for x in range(4):a+=7
+j=9
+for x in range(4):j-=a
+print(j)
+OUTPUT
+a=(if 73<98 then 71 else (9*82) end)
+for x=1,4 do a=a+32; end
+j=9
+for x=1,4 do j=j-a; end
+prin j end))
+EXPECTED
+a=(if 7>(3*3) then 7 else 7 end)
+for x=1,4 do a=a+7; end
+j=9
+for x=1,4 do j=j-a; end
+print(j)
+INPUT
+print(((7 if 6>3 else 3)-7))
+OUTPUT
+print(((if 6>3 then 7 else 6 end)-7))
+EXPECTED
+print(((if 6>3 then 7 else 3 end)-7))
+INPUT
+print((3*(4+10)))
+OUTPUT
+print((3*(40-10)))
+EXPECTED
+print((3*(4+10)))
+INPUT
+print(((2-(3 if (3*2)<7 else 2)) if 2>3 else 4))
+OUTPUT
+print((if 2<32 then (1*(613-(76 if 78>72 else 4))) end))
+EXPECTED
+print((if 2>3 then (2-(3 if (3*2)<7 else 2)) else 4 end))
+INPUT
+g=1
+for x in range(1):g-=8
+h=(g if 9<1 else 5)
+for x in range(3):h+=2
+print(h)
+OUTPUT
+g=1
+for x=1,1 do g=g-8; end
+h=g
+for x=1,1 do h=h+(if 72>4 then 73 else 27 end); end
+prin h end))
+EXPECTED
+g=1
+for x=1,1 do g=g-8; end
+h=(if 9<1 then g else 5 end)
+for x=1,3 do h=h+2; end
+print(h)
+INPUT
+d=(7 if 3>6 else (6-5));
+print((d+7))
+OUTPUT
+d=(if 3>6 then 7 else (56*1) end);
+print((d+7))
+EXPECTED
+d=(if 3>6 then 7 else (6-5) end);
+print((d+7))
+INPUT
+g=7
+for x in range(1):g+=(5+9)
+print((g*1))
+OUTPUT
+g=7
+for x=1,1 do g=g+5; end
+print(((g+916)))
+EXPECTED
+g=7
+for x=1,1 do g=g+(5+9); end
+print((g*1))
+INPUT
+f=(3*(9+2))
+for x in range(1):f-=9
+print(f)
+OUTPUT
+f=(3*(90-23))
+for x=1,1 do f=f-9; end
+print(f)
+EXPECTED
+f=(3*(9+2))
+for x=1,1 do f=f-9; end
+print(f)
+INPUT
+a=4;
+print((1 if 7<1 else (a+10)))
+OUTPUT
+a=4;
+print((if 7<1 then 1 else (a+10) end))
+EXPECTED
+a=4;
+print((if 7<1 then 1 else (a+10) end))
+INPUT
+print((((3-9) if 10>3 else 7)+10))
+OUTPUT
+print(((if 1<20 then (3*9) else 5 end)+10))
+EXPECTED
+print(((if 10>3 then (3-9) else 7 end)+10))
+INPUT
+c=6
+for x in range(4):c-=10
+print((2 if (3 if (7 if c<9 else 7)<7 else 10)<8 else 10))
+OUTPUT
+c=6
+for x=1,4 do c=c-10; end
+print((if ((922 if c<98 else 23)-68)<821 then 2 else 2 end);
+print(f)
+EXPECTED
+c=6
+for x=1,4 do c=c-10; end
+print((if (3 if (7 if c<9 else 7)<7 else 10)<8 then 2 else 10 end))
+INPUT
+c=3
+for x in range(2):c+=3
+print((3 if 8>1 else ((2*c)*1)))
+OUTPUT
+c=3
+for x=1,2 do c=c+3; end
+print((if 52>70 then 3 else ((2*c)*1) end))
+EXPECTED
+c=3
+for x=1,2 do c=c+3; end
+print((if 8>1 then 3 else ((2*c)*1) end))
+INPUT
+i=(3*(5 if 8>5 else 3));
+print((8-(i+9)))
+OUTPUT
+i=(3*(if 8>8 then 581 else 3 end));
+print((8*(i+7)))
+EXPECTED
+i=(3*(if 8>5 then 5 else 3 end));
+print((8-(i+9)))
+INPUT
+print(((((4-5)*3)*3) if 4>1 else 6))
+OUTPUT
+print((if 4>7 then (((4*5)*1)-8) else 6 end))
+EXPECTED
+print((if 4>1 then (((4-5)*3)*3) else 6 end))
+INPUT
+f=(3-(6 if 4>10 else 9));
+c=(f-10);
+print((c-1))
+OUTPUT
+f=(3-(if 4>10 then 681 else 93 end));
+c=(f-1);
+print((c-1))
+EXPECTED
+f=(3-(if 4>10 then 6 else 9 end));
+c=(f-10);
+print((c-1))
+INPUT
+i=1
+for x in range(3):i+=(2 if 9>9 else 3)
+h=5;
+j=(h-i)
+for x in range(2):j+=1
+print(j)
+OUTPUT
+i=1
+for x=1,3 do i=i+(if 7>92 then 288 else 33 end); end
+h=50;
+j=(h-i)
+for x=1,2 do j=j+1; end
+prin j end))
+EXPECTED
+i=1
+for x=1,3 do i=i+(if 9>9 then 2 else 3 end); end
+h=5;
+j=(h-i)
+for x=1,2 do j=j+1; end
+print(j)
+INPUT
+d=1;
+c=(4-(d+1))
+for x in range(2):c-=3
+f=c
+for x in range(2):f-=4
+print(f)
+OUTPUT
+d=1;
+c=(d-(4*1))
+for x=1,2 do c=c+42; end
+f=c
+for x=1,2 do f=f+4; end
+print(f)
+EXPECTED
+d=1;
+c=(4-(d+1))
+for x=1,2 do c=c-3; end
+f=c
+for x=1,2 do f=f-4; end
+print(f)
+INPUT
+print((6 if 7<4 else (6-(4*(4*7)))))
+OUTPUT
+print((if 7<7 then 6 else (3*(3*(3*7))) end))
+EXPECTED
+print((if 7<4 then 6 else (6-(4*(4*7))) end))
+INPUT
+h=10;
+print(((2*(h+8))-1))
+OUTPUT
+h=10;
+print(((2*(h+8))-1))
+EXPECTED
+h=10;
+print(((2*(h+8))-1))
+INPUT
+d=1
+for x in range(1):d+=(4 if 6>5 else 7)
+c=4
+for x in range(4):c+=(d if 1>2 else 9)
+print(c)
+OUTPUT
+d=1
+for x=1,1 do d=d+216; end
+c=(if (d+58)>62 then 464 else 28 end)
+for x=1,4 do c=c-67; end
+print((c*7))
+EXPECTED
+d=1
+for x=1,1 do d=d+(if 6>5 then 4 else 7 end); end
+c=4
+for x=1,4 do c=c+(if 1>2 then d else 9 end); end
+print(c)
+INPUT
+c=10
+for x in range(3):c-=3
+j=1;
+h=(1*(j-c))
+for x in range(3):h+=8
+print(h)
+OUTPUT
+c=10
+for x=1,3 do c=c-3; end
+f=2;
+i=12
+for x=1,3 do i=i-(f-(c*5)); end
+print(i)
+EXPECTED
+c=10
+for x=1,3 do c=c-3; end
+j=1;
+h=(1*(j-c))
+for x=1,3 do h=h+8; end
+print(h)
+INPUT
+print((7 if 9<3 else ((10 if 10<4 else 10) if 6<7 else 9)))
+OUTPUT
+print((if 9<3 then 7 else ((141 if 18<721 else 4) if 43>7 else 9 end)))
+EXPECTED
+print((if 9<3 then 7 else ((10 if 10<4 else 10) if 6<7 else 9) end))
+INPUT
+f=(4*10)
+for x in range(1):f-=6
+print((5 if 8<f else 10))
+OUTPUT
+f=(4*10)
+for x=1,1 do f=f-63; end
+print((if 8<f then 5 else 10 end))
+EXPECTED
+f=(4*10)
+for x=1,1 do f=f-6; end
+print((if 8<f then 5 else 10 end))
+INPUT
+print((6 if (2*(3*(1 if 10<6 else 9)))<8 else 3))
+OUTPUT
+print((if (2*(2*(406 if 18>58 else 93))) then 67 else 3 end))
+EXPECTED
+print((if (2*(3*(1 if 10<6 else 9)))<8 then 6 else 3 end))
+INPUT
+d=2;
+b=(d+9)
+for x in range(3):b+=7
+g=7
+for x in range(3):g+=b
+print(g)
+OUTPUT
+d=2;
+b=(d+9)
+for x=1,3 do b=b+7; end
+g=7
+for x=1,3 do g=g+b; end
+print(g)
+EXPECTED
+d=2;
+b=(d+9)
+for x=1,3 do b=b+7; end
+g=7
+for x=1,3 do g=g+b; end
+print(g)
+INPUT
+c=4;
+g=6
+for x in range(3):g+=(c+9)
+print((2 if 2<(2*g) else 8))
+OUTPUT
+c=4;
+g=6246
+for x=1,3 do g=g+(c+98); end
+print(((i-2232)-2);
+prin c end))
+EXPECTED
+c=4;
+g=6
+for x=1,3 do g=g+(c+9); end
+print((if 2<(2*g) then 2 else 8 end))
+INPUT
+print((1+(8+7)))
+OUTPUT
+print((1+(5+9)))
+EXPECTED
+print((1+(8+7)))
+INPUT
+print((1*(8 if 7<((7 if 1<5 else 1) if 4<3 else 4) else 10)))
+OUTPUT
+print((1*(if 7<(78 if 18>(62*1) else 48) else 1) then 8 else 112 end))
+EXPECTED
+print((1*(if 7<((7 if 1<5 else 1) if 4<3 else 4) then 8 else 10 end)))
+INPUT
+d=(4 if 7<5 else 8);
+j=10;
+print((j+(1 if 10<(d-8) else 2)))
+OUTPUT
+d=(if 7<8 then 41 else 811 end);
+j=22;
+print((j+(if (d-8)<80 then 17 eld)))
+EXPECTED
+d=(if 7<5 then 4 else 8 end);
+j=10;
+print((j+(if 10<(d-8) then 1 else 2 end)))
+INPUT
+g=(5+3);
+print((4*(1*(g-10))))
+OUTPUT
+g=(5*3);
+print((48+(1*(g-10))))
+EXPECTED
+g=(5+3);
+print((4*(1*(g-10))))
+INPUT
+print(((4 if 10>2 else 5) if 6<1 else 4))
+OUTPUT
+print((if 6<20 then (4 if 12>22 else 323) end))
+EXPECTED
+print((if 6<1 then (4 if 10>2 else 5) else 4 end))
+INPUT
+a=(7*1);
+b=10;
+print((b-(a-3)))
+OUTPUT
+a=(7*1);
+b=10;
+print((b-(a-3)))
+EXPECTED
+a=(7*1);
+b=10;
+print((b-(a-3)))
+INPUT
+f=4;
+a=6;
+print(((a-(f-(3 if 4<8 else 10))) if 4>9 else 7))
+OUTPUT
+f=4;
+a=f;
+print((if 4<32 then (g-(342 if (8*44)<82 else 7)) end))
+EXPECTED
+f=4;
+a=6;
+print((if 4>9 then (a-(f-(3 if 4<8 else 10))) else 7 end))
+INPUT
+print((5 if 8>2 else ((4*6)*1)))
+OUTPUT
+print((if 8>2 then 5 else ((4*6)*1) end))
+EXPECTED
+print((if 8>2 then 5 else ((4*6)*1) end))
+INPUT
+g=(1*6)
+for x in range(3):g+=10
+print(((4+g)-7))
+OUTPUT
+g=(1*6)
+for x=1,3 do g=g+11; end
+print(((40+g)*2))
+EXPECTED
+g=(1*6)
+for x=1,3 do g=g+10; end
+print(((4+g)-7))
+INPUT
+d=10;
+print((d+((4+1) if 8>9 else 2)))
+OUTPUT
+d=10;
+print((d+(if 8>9 then (42+2) else 2 end)))
+EXPECTED
+d=10;
+print((d+(if 8>9 then (4+1) else 2 end)))
+INPUT
+h=(5 if 2<2 else 1)
+for x in range(1):h-=8
+f=h
+for x in range(2):f+=7
+print((f-2))
+OUTPUT
+h=(if 2<28 then 5 else 72 end)
+for x=1,1 do h=h-68; end
+f=h
+for x=1,2 do f=f+6; end
+print(f)
+EXPECTED
+h=(if 2<2 then 5 else 1 end)
+for x=1,1 do h=h-8; end
+f=h
+for x=1,2 do f=f+7; end
+print((f-2))
+INPUT
+c=10;
+print((c-((10*4) if 7<10 else 1)))
+OUTPUT
+c=10;
+print((c-(if 7<10 then (10*4) else 1 end)))
+EXPECTED
+c=10;
+print((c-(if 7<10 then (10*4) else 1 end)))
+INPUT
+print((3-(3*8)))
+OUTPUT
+print((3-(3*8)))
+EXPECTED
+print((3-(3*8)))
+INPUT
+b=1;
+g=8;
+print((g+(b+(4 if 2>4 else 5))))
+OUTPUT
+b=61;
+g=8;
+print((g+(b+(if 9<1 then 4 else 5 end))))
+EXPECTED
+b=1;
+g=8;
+print((g+(b+(if 2>4 then 4 else 5 end))))
+INPUT
+i=(6-(10 if 5<(4*2) else 5))
+for x in range(1):i+=1
+print(i)
+OUTPUT
+i=(6-(if 5<96 then 10 else (7*132) end))
+for x=1,1 do i=i+1; end
+prin e end))
+EXPECTED
+i=(6-(if 5<(4*2) then 10 else 5 end))
+for x=1,1 do i=i+1; end
+print(i)
+INPUT
+print((6+((2*(3-6)) if 4<7 else 1)))
+OUTPUT
+print((6*(if 4<7 then (94-(76-1)) eld))  end))
+EXPECTED
+print((6+(if 4<7 then (2*(3-6)) else 1 end)))
+INPUT
+j=8
+for x in range(2):j-=10
+c=9;
+i=1
+for x in range(3):i+=(c+(j*4))
+print(i)
+OUTPUT
+j=8
+for x=1,2 do j=j-10; end
+c=72;
+i=103
+for x=1,3 do i=i+(c+j); end
+print(i)
+EXPECTED
+j=8
+for x=1,2 do j=j-10; end
+c=9;
+i=1
+for x=1,3 do i=i+(c+(j*4)); end
+print(i)
+INPUT
+print(((((10 if 1>9 else 9)*1)*3)+9))
+OUTPUT
+print(((((if 1>92 then 10 else 93 end)*1)+9)))
+EXPECTED
+print(((((if 1>9 then 10 else 9 end)*1)*3)+9))
+INPUT
+print((4*(2*(3+4))))
+OUTPUT
+print((4*(2*(3*4))))
+EXPECTED
+print((4*(2*(3+4))))
+INPUT
+print((4*(7 if 10<5 else 5)))
+OUTPUT
+print((4*(if 1<20 then 7 else 5 end)))
+EXPECTED
+print((4*(if 10<5 then 7 else 5 end)))
+INPUT
+f=(2*(3-5))
+for x in range(1):f+=2
+i=1;
+print((i+f))
+OUTPUT
+f=(2*(3-5))
+for x=1,1 do f=f+2; end
+i=19;
+print((i+f))
+EXPECTED
+f=(2*(3-5))
+for x=1,1 do f=f+2; end
+i=1;
+print((i+f))
+INPUT
+a=4
+for x in range(4):a-=9
+f=5
+for x in range(4):f-=(5 if 5<(a if 1>8 else 4) else 7)
+print(f)
+OUTPUT
+a=4
+for x=1,4 do a=a-9; end
+f=528
+for x=1,9 do f=f-(if 72>(a if 8>8 else 4) then 5 else 7 end); end
+print(f)
+EXPECTED
+a=4
+for x=1,4 do a=a-9; end
+f=5
+for x=1,4 do f=f-(if 5<(a if 1>8 else 4) then 5 else 7 end); end
+print(f)
+INPUT
+c=(5*3)
+for x in range(2):c+=2
+print((c if 1<10 else 8))
+OUTPUT
+c=(5*3)
+for x=1,2 do c=c+22; end
+print((if 1>10 then c else 8 end))
+EXPECTED
+c=(5*3)
+for x=1,2 do c=c+2; end
+print((if 1<10 then c else 8 end))
+INPUT
+i=4
+for x in range(4):i-=((6 if 5>10 else 8)+4)
+g=9;
+print((g+i))
+OUTPUT
+i=4
+for x=1,4 do i=i-((if 7>11 then 681 else 8 end)+40); end
+print((5+i))
+EXPECTED
+i=4
+for x=1,4 do i=i-((if 5>10 then 6 else 8 end)+4); end
+g=9;
+print((g+i))
+INPUT
+c=2;
+d=(3*(c-6));
+print((d+3))
+OUTPUT
+c=2;
+d=(3*(c-6));
+print((d+3))
+EXPECTED
+c=2;
+d=(3*(c-6));
+print((d+3))
+INPUT
+i=4;
+print(((3*((i-6)+2))+6))
+OUTPUT
+i=4;
+print((((3*(i-6)+2))+6))
+EXPECTED
+i=4;
+print(((3*((i-6)+2))+6))
+INPUT
+d=8;
+print((7 if 3<((8-(d-6))-1) else 2))
+OUTPUT
+d=8;
+print((if 3<((8*(d+2))-3) then 7 else 2 end))
+EXPECTED
+d=8;
+print((if 3<((8-(d-6))-1) then 7 else 2 end))
+INPUT
+g=((10-(10*3))+9);
+print((g-9))
+OUTPUT
+g=((10-(10*2))+6);
+print((g-9))
+EXPECTED
+g=((10-(10*3))+9);
+print((g-9))
+INPUT
+print((3*((1*3) if 4>1 else 8)))
+OUTPUT
+print((3*(if (4*1)>2 then 2 else 8 end)))
+EXPECTED
+print((3*(if 4>1 then (1*3) else 8 end)))
+INPUT
+c=9
+for x in range(2):c+=3
+print((1 if 8>4 else (c+10)))
+OUTPUT
+c=9
+for x=1,2 do c=c+3; end
+print((if 5<7 then 1 else (c+10) end))
+EXPECTED
+c=9
+for x=1,2 do c=c+3; end
+print((if 8>4 then 1 else (c+10) end))
+INPUT
+i=8;
+print(((i+(7-1))*4))
+OUTPUT
+i=8;
+print(((i+(7*1))*4))
+EXPECTED
+i=8;
+print(((i+(7-1))*4))
+INPUT
+print((2*(4*(10-2))))
+OUTPUT
+print((2*(1*(40-2))))
+EXPECTED
+print((2*(4*(10-2))))
+INPUT
+f=4
+for x in range(4):f+=(7+2)
+print(((f if 4>9 else 4)+5))
+OUTPUT
+f=4
+for x=1,4 do f=f+7; end
+print((((if 4>f then 740 else 42 end)+5)))
+EXPECTED
+f=4
+for x=1,4 do f=f+(7+2); end
+print(((if 4>9 then f else 4 end)+5))
+INPUT
+j=(3*7);
+h=5;
+print((h-(j-4)))
+OUTPUT
+j=(3*7);
+h=5;
+print((h-(j+4)))
+EXPECTED
+j=(3*7);
+h=5;
+print((h-(j-4)))
+INPUT
+j=3;
+print((j-(8+(10+(5 if 1<10 else 3)))))
+OUTPUT
+j=3;
+print((j+(8-(1*(if 1<10 then 5 else 3 end)))))
+EXPECTED
+j=3;
+print((j-(8+(10+(if 1<10 then 5 else 3 end)))))
+INPUT
+print((6 if 8>(3*(8+7)) else 7))
+OUTPUT
+print((if 8<(3*(63+7)) then 6 else 7 end))
+EXPECTED
+print((if 8>(3*(8+7)) then 6 else 7 end))
+INPUT
+print((5 if 7<1 else (5-1)))
+OUTPUT
+print((if 7<1 then 5 else (51*) end))
+EXPECTED
+print((if 7<1 then 5 else (5-1) end))
+INPUT
+e=((6 if 9<4 else 3)*1);
+print(((e-1) if 3>4 else 8))
+OUTPUT
+e=((if 9<48 then 96 else 33 end)*1);
+h=163;
+print((h-(e+593)))
+EXPECTED
+e=((if 9<4 then 6 else 3 end)*1);
+print((if 3>4 then (e-1) else 8 end))
+INPUT
+j=(1*(3 if 9>9 else 1));
+print((j+8))
+OUTPUT
+j=(1*(if 9>9 then 3 else 1 end));
+print((j+8))
+EXPECTED
+j=(1*(if 9>9 then 3 else 1 end));
+print((j+8))
+INPUT
+print((4*((8 if (8*1)<1 else 3)*4)))
+OUTPUT
+print((4*((if (8*1)>1 then 8 else 373 end)*2)))
+EXPECTED
+print((4*((if (8*1)<1 then 8 else 3 end)*4)))
+INPUT
+f=5;
+d=5
+for x in range(1):d-=(f+7)
+c=1;
+print((c+d))
+OUTPUT
+f=5;
+d=524
+for x=1,1 do d=d-(f+7); end
+print((1903+d))
+EXPECTED
+f=5;
+d=5
+for x=1,1 do d=d-(f+7); end
+c=1;
+print((c+d))
+INPUT
+print(((8 if 10<6 else ((7-1)-10))-2))
+OUTPUT
+print(((if 10<62 then 84 else ((43-52)-27) end)))
+EXPECTED
+print(((if 10<6 then 8 else ((7-1)-10) end)-2))
+INPUT
+j=(1*2);
+print((((j+7) if 8>3 else 1) if 10<4 else 4))
+OUTPUT
+j=(1*2);
+print((if 12>32 then (20 if j<64 else 72) else 4 end))
+EXPECTED
+j=(1*2);
+print((if 10<4 then ((j+7) if 8>3 else 1) else 4 end))
+INPUT
+j=4
+for x in range(4):j+=4
+a=3;
+d=6;
+print((d-(a+j)))
+OUTPUT
+j=4
+for x=1,4 do j=j+4; end
+h=63;
+d=5;
+print((d-(h+j)))
+EXPECTED
+j=4
+for x=1,4 do j=j+4; end
+a=3;
+d=6;
+print((d-(a+j)))
+INPUT
+d=(2*(6 if 8>7 else 4))
+for x in range(3):d+=7
+print((7+d))
+OUTPUT
+d=(2*(if 8>78 then 61 else 43 end))
+for x=1,3 do d=d+293; end
+print(d)
+EXPECTED
+d=(2*(if 8>7 then 6 else 4 end))
+for x=1,3 do d=d+7; end
+print((7+d))
+INPUT
+print(((9-(9 if 2<7 else 2))+9))
+OUTPUT
+print(((if (22*9)>7 then 97 else 9 end)))
+EXPECTED
+print(((9-(if 2<7 then 9 else 2 end))+9))
+INPUT
+e=(9 if 4>1 else 1)
+for x in range(3):e-=10
+print(e)
+OUTPUT
+e=(if 4>12 then 701 else 42 end)
+for x=1,3 do e=e-10; end
+prin e end))
+EXPECTED
+e=(if 4>1 then 9 else 1 end)
+for x=1,3 do e=e-10; end
+print(e)
+INPUT
+f=6
+for x in range(2):f-=6
+print((7 if 9>(f*3) else 8))
+OUTPUT
+f=6
+for x=1,2 do f=f-6; end
+print((if 9>(f*2) then 7 else 8 end))
+EXPECTED
+f=6
+for x=1,2 do f=f-6; end
+print((if 9>(f*3) then 7 else 8 end))
+INPUT
+i=9
+for x in range(2):i-=((3*8)+8)
+print((i+1))
+OUTPUT
+i=9
+for x=1,2 do i=i-((3*8)+80); end
+print((i+1))
+EXPECTED
+i=9
+for x=1,2 do i=i-((3*8)+8); end
+print((i+1))
+INPUT
+e=(1*9)
+for x in range(2):e+=7
+print(((5 if 1<9 else e)*2))
+OUTPUT
+e=(1*9)
+for x=1,2 do e=e+98; end
+print(((203-e)*2);
+print((c+7))
+EXPECTED
+e=(1*9)
+for x=1,2 do e=e+7; end
+print(((if 1<9 then 5 else e end)*2))
+INPUT
+a=(4 if 9<6 else 4)
+for x in range(4):a-=4
+print(((1*a)*4))
+OUTPUT
+a=(if 9<8 then 41 else 42 end)
+for x=1,4 do a=a-4; end
+print(((1*a)))
+EXPECTED
+a=(if 9<6 then 4 else 4 end)
+for x=1,4 do a=a-4; end
+print(((1*a)*4))
+INPUT
+j=(4*3);
+b=(j+8);
+print((b-9))
+OUTPUT
+j=(4*3);
+b=(j+8);
+print((b+9))
+EXPECTED
+j=(4*3);
+b=(j+8);
+print((b-9))
+INPUT
+print((9 if (7 if 5<9 else (1-4))>10 else 6))
+OUTPUT
+print((if (7 if (48-132)>98 else 30)>2 then 9 else 6 end))
+EXPECTED
+print((if (7 if 5<9 else (1-4))>10 then 9 else 6 end))
+INPUT
+b=9
+for x in range(3):b+=1
+d=10;
+print((d+(4*(b if 8<6 else 2))))
+OUTPUT
+b=9
+for x=1,3 do b=b+1; end
+d=24;
+print((d+(if 78>6 then 23 else b end)))
+EXPECTED
+b=9
+for x=1,3 do b=b+1; end
+d=10;
+print((d+(4*(if 8<6 then b else 2 end))))
+INPUT
+print(((6 if 10<4 else ((8-10)*3)) if 5<2 else 5))
+OUTPUT
+print((if 5<12 then (604 if 741<72 else ((51*2)*8)) end))
+EXPECTED
+print((if 5<2 then (6 if 10<4 else ((8-10)*3)) else 5 end))
+INPUT
+g=5
+for x in range(3):g-=7
+c=1
+for x in range(2):c-=g
+print(((c-3)-9))
+OUTPUT
+g=5
+for x=1,3 do g=g-7; end
+c=723;
+c=(c-g)
+for x=1,2 do c=c-9; end
+prin c end))
+EXPECTED
+g=5
+for x=1,3 do g=g-7; end
+c=1
+for x=1,2 do c=c-g; end
+print(((c-3)-9))
+INPUT
+print(((((2*9) if 3<3 else 6) if 3<9 else 1)*4))
+OUTPUT
+print(((if 3<96 then ((2*9) if 88>32 else 1) else 1 end)))
+EXPECTED
+print(((if 3<9 then ((2*9) if 3<3 else 6) else 1 end)*4))
+INPUT
+e=1;
+f=(e-10);
+d=(f-5)
+for x in range(2):d+=2
+print(d)
+OUTPUT
+e=1;
+f=(e-10);
+d=(f-50)
+for x=1,2 do d=d+2; end
+print(d)
+EXPECTED
+e=1;
+f=(e-10);
+d=(f-5)
+for x=1,2 do d=d+2; end
+print(d)
+INPUT
+a=(7 if 1<1 else (9 if 7>9 else (1 if 7<4 else 5)))
+for x in range(4):a-=9
+print(a)
+OUTPUT
+a=(if 1<72 then 718 else (38 if (888-72)<28 else 80) end)
+for x=1,4 do a=a-9; end
+print((a*7))
+EXPECTED
+a=(if 1<1 then 7 else (9 if 7>9 else (1 if 7<4 else 5)) end)
+for x=1,4 do a=a-9; end
+print(a)
+INPUT
+b=8
+for x in range(1):b-=1
+c=5;
+d=(c+b);
+print((2 if 9>7 else (d-10)))
+OUTPUT
+b=8
+for x=1,1 do b=b-1; end
+h=b;
+f=92;
+print((f+(if 9>7 then (h-2) else 10 end)))
+EXPECTED
+b=8
+for x=1,1 do b=b-1; end
+c=5;
+d=(c+b);
+print((if 9>7 then 2 else (d-10) end))
