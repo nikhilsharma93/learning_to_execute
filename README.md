@@ -8,7 +8,7 @@ Inspired from Learning to Execute (https://arxiv.org/abs/1410.4615), from which 
 
 
 Requirements: 
-`Torch`, `Lua`, `nn, nngraph modules for Torch`
+`Torch`, `Lua`, `nn, rnn (Element Research) modules for Torch`
 
 <br />
 To generate the data, execute
